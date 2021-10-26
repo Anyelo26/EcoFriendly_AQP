@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollectionCenterListComponent } from './collection-center-list.component';
+import { CollectionCenterListComponent } from './center-list.component';
 
 describe('CollectionCenterListComponent', () => {
   let component: CollectionCenterListComponent;

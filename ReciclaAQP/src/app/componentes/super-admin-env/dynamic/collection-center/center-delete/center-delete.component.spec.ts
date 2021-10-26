@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollectionCenterDeleteComponent } from './collection-center-delete.component';
+import { CollectionCenterDeleteComponent } from './center-delete.component';
 
 describe('CollectionCenterDeleteComponent', () => {
   let component: CollectionCenterDeleteComponent;

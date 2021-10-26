@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollectionCenterCreateComponent } from './collection-center-create.component';
+import { CollectionCenterCreateComponent } from './center-create.component';
 
 describe('CollectionCenterCreateComponent', () => {
   let component: CollectionCenterCreateComponent;

@@ -17,11 +17,11 @@ import { InformationDeleteComponent } from './dynamic/information/information-de
 import { InformationEditComponent } from './dynamic/information/information-edit/information-edit.component';
 import { InformationListComponent } from './dynamic/information/information-list/information-list.component';
 
-import { CollectionCenterCreateComponent } from './dynamic/collection-center/collection-center-create/collection-center-create.component';
-import { CollectionCenterDeleteComponent } from './dynamic/collection-center/collection-center-delete/collection-center-delete.component';
-import { CollectionCenterEditComponent } from './dynamic/collection-center/collection-center-edit/collection-center-edit.component';
-import { CollectionCenterListComponent } from './dynamic/collection-center/collection-center-list/collection-center-list.component';
-import { CollectionCenterViewComponent } from './dynamic/collection-center/collection-center-view/collection-center-view.component';
+import { CollectionCenterCreateComponent } from './dynamic/collection-center/center-create/center-create.component';
+import { CollectionCenterDeleteComponent } from './dynamic/collection-center/center-delete/center-delete.component';
+import { CollectionCenterEditComponent } from './dynamic/collection-center/center-edit/center-edit.component';
+import { CollectionCenterListComponent } from './dynamic/collection-center/center-list/center-list.component';
+import { CollectionCenterViewComponent } from './dynamic/collection-center/center-view/collection-center-view.component';
 
 @NgModule({
   declarations: [
