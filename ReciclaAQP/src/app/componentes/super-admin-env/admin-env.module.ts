@@ -22,6 +22,11 @@ import { CollectionCenterDeleteComponent } from './dynamic/collection-center/cen
 import { CollectionCenterEditComponent } from './dynamic/collection-center/center-edit/center-edit.component';
 import { CollectionCenterListComponent } from './dynamic/collection-center/center-list/center-list.component';
 import { CollectionCenterViewComponent } from './dynamic/collection-center/center-view/collection-center-view.component';
+import { SuperAdminEnvComponent } from './super-admin-env.component';
+import { HeaderComponent } from './static/header/header.component';
+import { FooterComponent } from './static/footer/footer.component';
+import { BodyComponent } from './static/body/body.component';
+
 
 @NgModule({
   declarations: [
@@ -40,11 +45,15 @@ import { CollectionCenterViewComponent } from './dynamic/collection-center/cente
     CollectionCenterDeleteComponent,
     CollectionCenterEditComponent,
     CollectionCenterListComponent,
-    CollectionCenterViewComponent, 
+    CollectionCenterViewComponent,
+    SuperAdminEnvComponent,
+    HeaderComponent,
+    FooterComponent,
+    BodyComponent
   ],
   imports: [
     CommonModule,
-    AdminEnvRoutingModule,   
+    AdminEnvRoutingModule,
   ]
 })
 export class AdminEnvModule { }

@@ -1,1 +1,49 @@
-<p>login works!</p>
+
+<div class="con-iz">
+    <div class="mu-iz">
+        <img class="logo" src="https://www.purdue.edu/discoverypark/arequipa-nexus/images/unsa-white.png">
+        <h4 class="na">
+            Sistema <br> administrativo de <br> Recicla AQP
+        </h4>
+    </div>
+</div>
+<div class="con-de">
+    <div class="mu-de">
+        <form >
+
+            <h3 class="la"> INICIO DE SESIÓN</h3>
+            <br />
+            <label> Usuario </label>
+            <br />
+            <img class="icono" src="https://image.flaticon.com/icons/png/512/1077/1077114.png">
+            <input 
+                type="text" 
+                name="usuario"
+                formControlName="username"
+            />
+            <br />
+            <label> Contraseña</label>
+            <br />
+            <img class="icono" src="https://image.flaticon.com/icons/png/512/483/483408.png">
+            <input 
+                type="password" 
+                name="password"
+                formControlName="password"
+            />
+            <br />
+            <select name='cuenta' >
+                <option hidden selected value="Administrador">Administrador</option>
+                <option >Administrador</option>
+                <option >Ponente</option>
+                <option >Docente</option>
+                <option >Apoyo en la Organizacion</option>
+                <option >Organizador</option>
+              </select>
+            <button type="submit" class="boton" > Ingresar </button>
+        </form>
+    </div>
+    <!--<div class="mu-de-a">
+        <h5> Si no tienes una cuenta </h5>
+        <button type="button" class="boton" onclick="location.href='/sesionRegister'"> Registrarse </button>
+    </div>-->
+</div>

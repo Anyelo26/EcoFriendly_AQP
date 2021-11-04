@@ -19,14 +19,14 @@ import { CollectionCenterDeleteComponent } from './dynamic/collection-center/cen
 import { CollectionCenterEditComponent } from './dynamic/collection-center/center-edit/center-edit.component';
 import { CollectionCenterListComponent } from './dynamic/collection-center/center-list/center-list.component';
 import { CollectionCenterViewComponent } from './dynamic/collection-center/center-view/collection-center-view.component';
-
-import { FooterComponent } from '../customer-env/static/footer/footer.component';
-import { HeaderComponent } from '../customer-env/static/header/header.component';
+import { SuperAdminEnvComponent } from './super-admin-env.component';
+import { BodyComponent } from './static/body/body.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'',component :SuperAdminEnvComponent,
     children:[
+      {path:'Main',component:BodyComponent},
       {path: 'UserCreate',component: UserCreateComponent},
       {path: 'UserList',component: UserListComponent},
       {path: 'UserDelete',component: UserDeleteComponent},
