@@ -1,12 +1,12 @@
 .menu{
-    margin-top: 1%;
+    margin-top: 3%;
     margin-left: 2%;
     margin-right: 2%;
     font-family: Roboto;
     font-style: normal;
     font-size: 15px;
     border: none;
-    background-color: white;
+    background-color: #FFFEF6;
 }
 
 .menu:hover{
@@ -15,8 +15,8 @@
 }
 
 .boton{
-    margin-left: 25%;
-    text-align: left;
+    margin-left: 10%;
+    text-align: center;
     padding: 10px 20px;
     font-family: Roboto;
     font-style: normal;
