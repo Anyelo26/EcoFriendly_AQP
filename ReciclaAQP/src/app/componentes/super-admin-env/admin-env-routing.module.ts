@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path:'',component :SuperAdminEnvComponent,
     children:[
-      {path:'Main',component:BodyComponent},
+      {path:'',component:BodyComponent},
       {path: 'UserCreate',component: UserCreateComponent},
       {path: 'UserList',component: UserListComponent},
       {path: 'UserDelete',component: UserDeleteComponent},

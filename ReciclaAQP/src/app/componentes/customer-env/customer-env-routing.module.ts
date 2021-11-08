@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardPrincipalComponent } from './dynamic/dashboard/dashboard-principal/dashboard-principal.component';
+import { CustomerEnvComponent } from './customer-env.component';
+import { CollectionCenterComponent } from './dynamic/collection-center/collection-center.component';
+import { FootprintComponent } from './dynamic/footprint/footprint.component';
+import { InformationComponent } from './dynamic/information/information.component';
+import { BodyComponent } from './static/body/body.component';
+
 
 const routes: Routes = [
   {
-    path:'',
+    path:'',component:CustomerEnvComponent,
     children:[
-      {path: '',component:DashboardPrincipalComponent}
+      {path: '',component:BodyComponent},
+      {path: 'Information',component:InformationComponent},
+      {path: 'CollectionCenter',component:CollectionCenterComponent},
+      {path: 'Footprint',component:FootprintComponent},
     ]
   
     }
