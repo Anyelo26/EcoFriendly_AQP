@@ -43,7 +43,6 @@ const routes: Routes = [
       {path: 'CollectionCenterEdit',component: CollectionCenterEditComponent},
       {path: 'CollectionCenterList',component: CollectionCenterListComponent},
       {path: 'CollectionCenterView',component: CollectionCenterViewComponent},
-      {path: 'body', component: BodyComponent},
 
     ]
 

@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   gotoInicio(){
-    this.router.navigate(['/SuperAdmin/body'])
+    this.router.navigate(['/SuperAdmin'])
   }
 
   gotoUser(){
