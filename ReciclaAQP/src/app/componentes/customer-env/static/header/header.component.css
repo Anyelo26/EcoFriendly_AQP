@@ -9,7 +9,8 @@
     background-color: #FFFEF6;
 }
 
-.menu:hover{
+.menu:hover,
+.menu:focus{
     color: #01D98B;
     border-bottom: 3px solid #01D98B;
 }
