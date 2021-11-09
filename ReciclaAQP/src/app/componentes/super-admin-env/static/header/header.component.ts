@@ -32,4 +32,8 @@ export class HeaderComponent implements OnInit {
   gotoInformation(){
     this.router.navigate(['/SuperAdmin/InformationList'])
   }
+
+  gobackInicio(){
+    this.router.navigate(['/'])
+  }
 }
