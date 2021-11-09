@@ -26,6 +26,13 @@ import { SuperAdminEnvComponent } from './super-admin-env.component';
 import { HeaderComponent } from './static/header/header.component';
 import { FooterComponent } from './static/footer/footer.component';
 import { BodyComponent } from './static/body/body.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import {FormsModule} from '@angular/forms';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
@@ -54,6 +61,12 @@ import { BodyComponent } from './static/body/body.component';
   imports: [
     CommonModule,
     AdminEnvRoutingModule,
+    MatGridListModule,
+    MatIconModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule
+    
   ]
 })
 export class AdminEnvModule { }

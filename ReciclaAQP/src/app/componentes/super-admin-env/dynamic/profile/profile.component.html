@@ -1,1 +1,40 @@
-<p>profile works!</p>
+<div class="contenido">
+    <mat-grid-list cols="4" rowHeight="4:5" gutterSize="2px">
+        <mat-grid-tile>
+            <div class="contenedorSaludo">
+                <div class="icono">
+                    <mat-icon aria-hidden="false">account_circle</mat-icon>
+                </div>
+                <div>
+                    <h3 class="bienvenido">Bienvenido</h3>
+                    <h3 class="name">Administrador!</h3>
+                </div>
+            </div>
+
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+            <div class="contenedorForm">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Nombres:">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Apellidos">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Correo:">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="password" placeholder="Contraseña:">
+                </mat-form-field>
+
+                <button class="boton" mat-raised-button color="primary">Guardar</button>
+            </div>
+
+
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
