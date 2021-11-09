@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path:'',component :SuperAdminEnvComponent,
     children:[
-      {path:'Main',component:BodyComponent},
+      {path:'',component:BodyComponent},
       {path: 'UserCreate',component: UserCreateComponent},
       {path: 'UserList',component: UserListComponent},
       {path: 'UserDelete',component: UserDeleteComponent},
@@ -43,7 +43,6 @@ const routes: Routes = [
       {path: 'CollectionCenterEdit',component: CollectionCenterEditComponent},
       {path: 'CollectionCenterList',component: CollectionCenterListComponent},
       {path: 'CollectionCenterView',component: CollectionCenterViewComponent},
-      {path: 'body', component: BodyComponent},
 
     ]
 
