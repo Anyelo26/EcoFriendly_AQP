@@ -24,6 +24,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyCYenyT5ox8JBanNcWhNlcPH4NB06h9354"
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

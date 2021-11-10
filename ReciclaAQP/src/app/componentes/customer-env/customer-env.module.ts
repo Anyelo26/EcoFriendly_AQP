@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatCardModule,
+    AgmCoreModule,
   ]
 })
 export class CustomerEnvModule { }

@@ -1,1 +1,40 @@
-<p>footprint works!</p>
+<div class="contenedor-general">
+    <div class="buscador">
+        <h3> Seleccione su departamento: </h3>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Departamento</mat-label>
+            <mat-select [(value)]="selectedDep">
+                <mat-option></mat-option>
+                <mat-option [value]="option.value" *ngFor="let option of departamentos">{{ option.viewValue }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>. </p>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="example-button-row">
+        <button mat-raised-button class="agua">
+            <mat-icon>check_circle_outline</mat-icon> Agua
+        </button>
+        <button mat-raised-button class="clima">
+            <mat-icon>check_circle_outline</mat-icon> Cambio Climático
+        </button>
+        <button mat-raised-button class="atmosfera">
+            <mat-icon>check_circle_outline</mat-icon> Atmósfera
+        </button>
+        <button mat-raised-button class="residuos">
+            <mat-icon>check_circle_outline</mat-icon> Residuos
+        </button>
+        <button mat-raised-button class="bio">
+            <mat-icon>check_circle_outline</mat-icon> Biodiversidad
+        </button>
+        <button mat-raised-button class="recursos">
+            <mat-icon>check_circle_outline</mat-icon> Recursos
+        </button>
+    </div>
+    <div class="mapa">
+        <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng"></agm-map>
+    </div>
+</div>
