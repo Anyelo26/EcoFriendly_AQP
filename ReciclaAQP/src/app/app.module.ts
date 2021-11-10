@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MatSliderModule } from '@angular/material/slider';
 
 //Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -24,6 +27,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AgmCoreModule } from '@agm/core';
+
+
 
 
 
@@ -36,6 +42,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    FlexLayoutModule,
+    MatSliderModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
@@ -50,7 +58,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: ""
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

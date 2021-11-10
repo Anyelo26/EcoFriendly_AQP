@@ -26,6 +26,9 @@ import { SuperAdminEnvComponent } from './super-admin-env.component';
 import { HeaderComponent } from './static/header/header.component';
 import { FooterComponent } from './static/footer/footer.component';
 import { BodyComponent } from './static/body/body.component';
+import {FormsModule} from '@angular/forms';
+
+
 
 //Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -69,6 +72,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     CommonModule,
     AdminEnvRoutingModule,
+    MatGridListModule,
+    MatIconModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
