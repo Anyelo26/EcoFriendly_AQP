@@ -54,7 +54,7 @@ import { AgmCoreModule } from '@agm/core';
     MatTableModule,
     MatPaginatorModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyCYenyT5ox8JBanNcWhNlcPH4NB06h9354"
+      apiKey: ""
     })
     
   ],
