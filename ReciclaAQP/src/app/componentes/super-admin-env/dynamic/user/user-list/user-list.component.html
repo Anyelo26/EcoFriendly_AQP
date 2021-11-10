@@ -1,6 +1,82 @@
-<p>user-list works!</p>
+<!-- MOSTRARLO BONITO ;) -->
 
-<button type="button" class="btn btn-outline-dark"(click)='gotoUserCreate()'><mat-icon>add_circle_outline</mat-icon></button>
+<div class="head">
+    <h1> Usurios administrativos </h1>
+  </div>
+  <div class="icon-search">
+    <mat-icon>search</mat-icon>
+  </div>
+  <div class="search">
+    <mat-form-field appearance="standard">
+      <input (keyup)="applyFilter($event)" matInput placeholder="Buscar" #input>
+      
+    </mat-form-field>
+  </div>
+  <div class="btn-userCreate">
+    <button type="button" class="btn btn-outline-dark" (click)='gotoUserView()'>
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+  <br>
+  <div id="user">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <tr mat-header-row *matHeaderRowDef="headers"></tr>
+      <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+  
+ 
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{users.indexOf(element)+1}} </td>
+      </ng-container>
+  
+ 
+      <ng-container matColumnDef="rol">
+        <th mat-header-cell *matHeaderCellDef> Rol </th>
+        <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="botones">
+          <button type="button" class="btn btn-outline-warning" (click)='gotoUserCreate()'>
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+          <button type="button" class="btn btn-outline-info mx-2" (click)='gotoUserEdit()'>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button type="button" class="btn btn-outline-danger"  (click)='gotoUserDelete()'>
+            <mat-icon>restore_from_trash</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
+<!--<button type="button" class="btn btn-outline-dark"(click)='gotoUserCreate()'><mat-icon>add_circle_outline</mat-icon></button>
 <button type="button" class="btn btn-outline-warning" (click)='gotoUserView()'><mat-icon>remove_red_eye</mat-icon></button> 
 <button type="button" class="btn btn-outline-info mx-2" (click)='gotoUserEdit()'><mat-icon>edit</mat-icon></button>
-<button type="button" class="btn btn-outline-danger" (click)='gotoUserDelete()'><mat-icon>restore_from_trash</mat-icon></button>
+<button type="button" class="btn btn-outline-danger" (click)='gotoUserDelete()'><mat-icon>restore_from_trash</mat-icon></button>-->

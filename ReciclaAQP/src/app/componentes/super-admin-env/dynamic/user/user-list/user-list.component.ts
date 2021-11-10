@@ -5,6 +5,9 @@ import { UserDeleteComponent } from '../user-delete/user-delete.component';
 import { UserEditComponent } from '../user-edit/user-edit.component';
 import { UserViewComponent } from '../user-view/user-view.component';
 import { MatDialog } from '@angular/material/dialog';
+import { User } from 'src/app/modelos/User';
+import { UserService } from 'src/app/servicios/user.service';
+
 import { MatTableDataSource } from '@angular/material/table'
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -16,16 +19,35 @@ import {MatSort} from '@angular/material/sort';
 })
 export class UserListComponent implements OnInit,AfterViewInit {
 
+
+  @ViewChild(MatPaginator) paginator!:MatPaginator
+  @ViewChild(MatSort)sort!: MatSort
+
   constructor(
+    private userService:UserService,
     private router: Router, 
     private route: ActivatedRoute, 
     public dialog: MatDialog,
   ) { }
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
+
+  public headers:string[]=["id","rol","nombre","apellido","email","estado","acciones"]
+  public users:User[]=[]
+  public dataSource= new MatTableDataSource(this.users)
   ngOnInit(): void {
+    this.goToUserList()
+
+  }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+  applyFilter(event:Event){
+    const filterValue= (event.target as HTMLInputElement).value;
+    this.dataSource.filter=filterValue.trim().toLowerCase();
+    if(this.dataSource.paginator){
+      this.dataSource.paginator.firstPage()
+    }
   }
 
   gotoUserCreate(){
@@ -50,6 +72,20 @@ export class UserListComponent implements OnInit,AfterViewInit {
     const dialogRef = this.dialog.open(UserViewComponent, {
       width:'61%'
     });
+  }
+  goToUserList(){
+    this.userService.getlistUser().subscribe(
+      (response)=>{
+        this.users=(response as any).data;
+        this.dataSource=new MatTableDataSource(this.users)
+        this.ngAfterViewInit()
+      },
+      (error)=>{
+        console.log("error"+error)
+      }
+
+    )
+
   }
 
 }
