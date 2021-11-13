@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Information } from 'src/app/modelos/Information';
+import { InformationService } from 'src/app/servicios/information.service';
 
 @Component({
   selector: 'app-information',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
-  constructor() { }
+  public cards:Information[]=[];
+
+  constructor(
+    private userService:InformationService,
+    //private router: Router, 
+    //private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public listarcards(){
+    this.userService.getListInformation()
+    .subscribe(
+      (response) =>{
+        this.cards=(response as any).data;
+        return console.log(this.cards)
+        },
+        (error) =>{
+          console.log("error"+ error);
+        }
+    )
+  }
 }
