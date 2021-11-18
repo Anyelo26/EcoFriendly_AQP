@@ -29,7 +29,7 @@ export class InformationListComponent implements OnInit,AfterViewInit {
     public dialog: MatDialog,
   ) { }
 
-  public headers:string[] = ["fecha","titulo","tipo","descripción","acciones"]
+  public headers:string[] = ["id","titulo","tipo","fecha","descripción","acciones"]
   public information:Information[] = []
   public dataSource= new MatTableDataSource(this.information)
 

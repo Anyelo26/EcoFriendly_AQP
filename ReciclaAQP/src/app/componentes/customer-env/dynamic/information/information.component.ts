@@ -14,14 +14,15 @@ export class InformationComponent implements OnInit {
 
   constructor(
     private userService:InformationService,
-    //private router: Router, 
-    //private route: ActivatedRoute,
+    private router: Router, 
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+    this.golistarcards()
   }
 
-  public listarcards(){
+  golistarcards(){
     this.userService.getListInformation()
     .subscribe(
       (response) =>{
