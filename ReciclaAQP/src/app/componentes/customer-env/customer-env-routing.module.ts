@@ -5,6 +5,7 @@ import { CollectionCenterComponent } from './dynamic/collection-center/collectio
 import { FootprintComponent } from './dynamic/footprint/footprint.component';
 import { InformationComponent } from './dynamic/information/information.component';
 import { BodyComponent } from './static/body/body.component';
+import { InfoDetailComponent } from './dynamic/information/info-detail/info-detail.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       {path: 'Information',component:InformationComponent},
       {path: 'CollectionCenter',component:CollectionCenterComponent},
       {path: 'Footprint',component:FootprintComponent},
+      {path: 'Detail',component:InfoDetailComponent}
     ]
   
     }

@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
+import { InfoDetailComponent } from './dynamic/information/info-detail/info-detail.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AgmCoreModule } from '@agm/core';
     FooterComponent,
     CollectionCenterComponent,
     InformationComponent,
-    FootprintComponent
+    FootprintComponent,
+    InfoDetailComponent
   
   ],
   imports: [

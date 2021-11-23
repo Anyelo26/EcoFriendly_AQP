@@ -1,7 +1,7 @@
 <h4> Consejos recomendaciones y datos curiosos, <span> para que recicles de forma correcta y sencilla </span></h4>
 
 <div class="conponent">
-    <mat-grid-list cols="3" rowWidth="33%" rowHeight="400px">
+    <mat-grid-list cols="3" rowWidth="33%" rowHeight="430px">
         <div *ngFor = "let registro of cards">
             <mat-grid-tile>
                 <mat-card class="card">
@@ -14,7 +14,7 @@
                         {{registro.descripcion}}
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-button>Ver Más</button>
+                        <button mat-button (click)='goInformationDetail(registro.id)'>Ver Más</button>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>
