@@ -74,9 +74,10 @@ export class UserListComponent implements OnInit,AfterViewInit {
     });
   }
   goToUserList(){
-    this.userService.getlistUser().subscribe(
+    this.userService.getlistUser2().subscribe(
       (response)=>{
         this.users=(response as any).data;
+        console.log(this.users)
         this.dataSource=new MatTableDataSource(this.users)
         this.ngAfterViewInit()
       },
