@@ -1,5 +1,5 @@
 
-<form class="formulario">
+<form class="formulario" [formGroup]='formInformation'>
     <div class="titulo">
         <span> Nueva Ficha de Información </span>
     </div>
@@ -7,16 +7,32 @@
     </div>
     <div class="contenido">
 
-        <input type="text" placeholder="Titulo" />
-        <div class="col-half"><input class="e" type="text" placeholder="Tipo" /></div>
-        <div class="col-half"><input class="e" type="date" placeholder="Fecha" /></div>
-        <textarea placeholder="Descripción"></textarea>
-        <input type="text" placeholder="Url"/>
+        <input type="text" formControlName="titulo" placeholder="Titulo" />
+        
+        <div class="col-half">
+            <select name='tipoInformacion' formControlName="tipo">
+                <option selected value="">Seleccione un tipo</option>
+            </select>
+        </div>
+        
+        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" /></div>
+        
+        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        
+        <input type="text"  formControlName="url_imagen" placeholder="Url"/>
 
-        <h4> Detalle </h4>
+        <h4> Detalle <span> (Maximo agregar 5 items) </span></h4>
+        
+        <div formArray="detalle">
+            <div *ngFor="let item of getDetalle.controls; let pointIndex=index" [formGroupName]=pointIndex>
+                <input class="especial" formControlName="detalle" /> 
+                <a class="btn btn-outline-danger" (click)="removeDetalle(pointIndex)"><mat-icon>remove icon</mat-icon></a>
+                <a class="btn btn-outline-success" (click)="addDetalle()"><mat-icon>add</mat-icon></a>
+            </div>
+        </div>
 
-        <div class="p">
-            <button type="button" class="boton"> Guardar </button>
+        <div mat-dialog-actions class="p">
+            <button type="button" class="boton" (click)='Guardar()'> Agregar Ficha de Informativa </button>
         </div>
 
     </div>

@@ -26,7 +26,7 @@ import { SuperAdminEnvComponent } from './super-admin-env.component';
 import { HeaderComponent } from './static/header/header.component';
 import { FooterComponent } from './static/footer/footer.component';
 import { BodyComponent } from './static/body/body.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -77,7 +77,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    
+    ReactiveFormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,

@@ -19,4 +19,15 @@ export class InformationService {
   getListInformation(){
     return this.http.get<Information>(this.url)
   }
+
+  crearInformation(information:Information):Observable<any>{
+    let rutacrear=this.url+"create/"
+    return this.http.post<Information>(rutacrear,information);
+  }
+
+  eliminarInformation(idinformation:any):Observable<any>{
+    let rutaeliminar=this.url+"delete/";
+    return this.http.post<Information>(rutaeliminar,idinformation);
+  }
+
 }
