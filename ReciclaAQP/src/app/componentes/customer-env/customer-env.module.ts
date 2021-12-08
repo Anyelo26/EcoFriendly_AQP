@@ -29,7 +29,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
 import { InfoDetailComponent } from './dynamic/information/info-detail/info-detail.component';
-
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [ 
@@ -62,6 +62,7 @@ import { InfoDetailComponent } from './dynamic/information/info-detail/info-deta
     MatPaginatorModule,
     MatCardModule,
     AgmCoreModule,
+    NgbCollapseModule,
   ]
 })
 export class CustomerEnvModule { }
