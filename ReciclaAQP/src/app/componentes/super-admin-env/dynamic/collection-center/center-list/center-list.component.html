@@ -1,1 +1,82 @@
-<p>collection-center-list works!</p>
+<!-- MOSTRARLO BONITO ;) -->
+
+<div class="head">
+    <h1> Centros de Acopio </h1>
+  </div>
+  <div class="icon-search">
+    <mat-icon>search</mat-icon>
+  </div>
+  <div class="search">
+    <mat-form-field appearance="standard">
+      <input (keyup)="applyFilter($event)" matInput placeholder="Buscar Centro de acopio" #input>
+      
+    </mat-form-field>
+  </div>
+  <div class="btn-userCreate">
+    <button type="button" class="btn btn-outline-dark" (click)='gotoCollectionCenterCreate()'>
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+  <br>
+  <div id="user">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <tr mat-header-row *matHeaderRowDef="headers"></tr>
+      <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+  
+ 
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{centrosAcopio.indexOf(element)+1}} </td>
+      </ng-container>
+  
+ 
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef> Categoría </th>
+        <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="horario">
+        <th mat-header-cell *matHeaderCellDef> Horario </th>
+        <td mat-cell *matCellDef="let element"> {{element.horario}} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="botones">
+          <button type="button" class="btn btn-outline-warning" (click)='gotoCollectionCenterView()'>
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+          <button type="button" class="btn btn-outline-info mx-2" (click)='gotoCollectionCenterEdit()'>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button type="button" class="btn btn-outline-danger"  (click)='gotoCollectionCenterDelete()'>
+            <mat-icon>restore_from_trash</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
+<!--<button type="button" class="btn btn-outline-dark"(click)='gotoUserCreate()'><mat-icon>add_circle_outline</mat-icon></button>
+<button type="button" class="btn btn-outline-warning" (click)='gotoUserView()'><mat-icon>remove_red_eye</mat-icon></button> 
+<button type="button" class="btn btn-outline-info mx-2" (click)='gotoUserEdit()'><mat-icon>edit</mat-icon></button>
+<button type="button" class="btn btn-outline-danger" (click)='gotoUserDelete()'><mat-icon>restore_from_trash</mat-icon></button>-->

@@ -1,0 +1,115 @@
+.head {
+    padding-top: 1%;
+    position: absolute;
+    left: 2%;
+    width: 30%;
+    height: 10%;
+  }
+  
+  .icon-search {
+    position: absolute;
+    left: 30%;
+    width: 10%;
+    height: 10%;
+    margin-top: 2%;
+    color: #055242;
+  }
+  
+  .search {
+    position: absolute;
+    right: 35%;
+    width: 40%;
+    height: 10%;
+    lighting-color: #055242;
+    
+  }
+  
+  .btn-userCreate {
+    padding-top: 0.5%;
+    position: relative;
+    left: 55%;
+    width: 40%;
+    height: 10%;
+  }
+  
+  h1 {
+    text-align: left;
+    color: #055242;
+    font-size: 25px;
+    margin-top: 3%;
+    margin-left: 8%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .btn-outline-dark {
+    margin-top: 3%;
+    margin-left: 75%;
+    color: rgb(98, 165, 32);
+    border-color: rgb(91, 151, 32);
+  
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: rgb(91, 151, 32) !important;
+    color: white;
+  }
+  
+  #user {
+    border-collapse: collapse;
+    width: 95%;
+    height: 80%;
+    font-size: 12.5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 2%;
+    margin-right: 2%;
+    ;
+  }
+  
+  #user tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #user td,
+  #user th {
+    border-bottom: 1px solid #055242;
+    padding: 8px;
+    color: black;
+  }
+  
+  /*#course tr:nth-child(even){background-color: #f2f2f2;}*/
+  
+  #user tr:hover {
+    background-color: #ddd;
+  }
+  
+  
+  #user th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #055242;
+    color: white;
+  }
+  
+  
+  table {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    margin-left: 20%;
+    width: 90%;
+    color: black;
+  }
+  
+  .botones {
+    width: 20%;
+  }
+  
+  .descripcion {
+    width: 38%;
+  }
+  
