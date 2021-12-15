@@ -1,28 +1,28 @@
-<form class="formulario" [formGroup]='formInformation'>
+<form class="formulario" >
     <div class="titulo">
-        <span> Ficha Informativa : {{datosficha.id}} </span>
+        <span> Ficha Informativa : {{datosFicha.titulo}} </span>
     </div>
     <div class="linea">
     </div>
     <div class="contenido">
 
-        <input type="text" formControlName="titulo" placeholder="Titulo" readonly/>
+        <input type="text" placeholder="Titulo" value="{{datosFicha.titulo}}" readonly/>
         
         <div class="col-half">
-            <select name='tipoInformacion' formControlName="tipo">
-                <option selected value="">Seleccione un tipo</option>
+            <select name='tipoInformacion'>
+                <option selected value="">{{datosFicha.tipo}}</option>
             </select>
         </div>
         
-        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" readonly/></div>
+        <div class="col-half"><input class="e" type="date" placeholder="Fecha" value="{{datosFicha.fecha}}" readonly/></div>
         
-        <textarea  formControlName="descripcion" placeholder="Descripción" readonly></textarea>
+        <textarea placeholder="Descripción" value="{{datosFicha.descripcion}}" readonly></textarea>
         
-        <input type="text"  formControlName="url_imagen" placeholder="Url" readonly/>
+        <input type="text" placeholder="Url" value="{{datosFicha.url_imagen}}" readonly/>
 
         <!--<h4> Detalle <span> (Maximo agregar 5 items) </span></h4>-->
         
-        <input type="text"  formControlName="detalle" placeholder="Detalle" readonly/>
+        <textarea placeholder="Detalle" value="{{datosFicha.detalle}}"></textarea>
 
         <!--<div formArrayName="detalle">
             <div *ngFor="let item of getDetalle.controls; let pointIndex=index">

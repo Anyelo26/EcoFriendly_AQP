@@ -42,13 +42,13 @@ export class InformationService {
     return this.http.post<Information>(rutaeliminar,information,{'headers': headers});
   }
 
-  viewInformation(id:number):Observable<Information>{//tal vez pueda cambiarse a string
+  viewInformation(id:any):Observable<Information>{//tal vez pueda cambiarse a string
 
     let token = this.user.getMeToken();
     const headers = new HttpHeaders().set('Authorization','Bearer '+token)
 
-    let direccion= this.url+'retrieve/'+id;
-    return this.http.get<Information>(direccion,{'headers': headers});
+    let direccion= this.url+"retrieve/";
+    return this.http.post<Information>(direccion,id,{'headers': headers});
   }
 
   editarInformation(information:Information):Observable<any>{
@@ -59,6 +59,4 @@ export class InformationService {
     let rutaedit=this.url+"update/";
     return this.http.post<Information>(rutaedit,information,{'headers': headers});
   }
-
-  
 }

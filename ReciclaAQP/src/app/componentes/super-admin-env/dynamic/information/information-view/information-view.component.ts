@@ -13,38 +13,22 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class InformationViewComponent implements OnInit {
 
-  public datosficha: Information={id:'',titulo:'', fecha:'',descripcion:'',tipo:'',url_imagen:'',detalle:[]}
+  datosFicha:any=[];
 
   constructor(
-    private service:InformationService, 
-    private fb:FormBuilder, 
+    private service:InformationService,  
     public dialogRef: MatDialogRef<InformationViewComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
-  public formInformation!:FormGroup;
-  contruirFormulario(){
-    this.formInformation = new FormGroup({
-      fecha: new FormControl(''),
-      titulo: new FormControl(''),
-      descripcion: new FormControl(''),
-      url_imagen: new FormControl(''),
-      tipo: new FormControl(''),
-      detalle: new FormControl('')
-    });
-  }
+  
 
   ngOnInit(): void {
-    this.contruirFormulario();
-    this.service.viewInformation(this.data.id)
-    .subscribe
-    (
-      (response:Information) =>{
-        this.formInformation.setValue(response)
-        return this.datosficha=response;
-      },
-      (error) =>{
-        console.log('error'+error);
+    this.service.viewInformation({id:this.data.id}).subscribe(
+      (response :any)=>{
+        console.log(this.data.id)
+        console.log(response)
+        return this.datosFicha=response;
       }
     )
   }
