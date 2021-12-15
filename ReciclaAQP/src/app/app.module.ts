@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { ToastrModule } from 'ngx-toastr'
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatSliderModule } from '@angular/material/slider';
@@ -65,6 +68,7 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    ToastrModule.forRoot({positionClass:'toast-bottom-right'}),
     AgmCoreModule.forRoot({
       apiKey: ""
     })

@@ -1,5 +1,5 @@
 
-<form class="formulario">
+<form class="formulario" [formGroup]="formCenter">
     <div class="titulo">
         <span> Nuevo Centro de Acopio </span>
     </div>
@@ -7,33 +7,33 @@
     </div>
     <div class="contenido">
 
-        <input type="text" placeholder="Nombre del Centro de Acopio" />
+        <input type="text" placeholder="Nombre del Centro de Acopio" formControlName="nombre" required/>
         
         <div class="col-half">
-            <select name='tipoCentro'>
+            <select name='tipoCentro' formControlName="categoria" required>
                 <option selected value="">Seleccione una Categoria</option>
             </select>
         </div>
 
-        <div class="col-half"><input class="e" type="tel"  placeholder="Telefono" /></div>
+        <div class="col-half"><input class="e" type="tel" formControlName="telefono" placeholder="Telefono" required/></div>
         
-        <input type="text" placeholder="Dirección" />
+        <input type="text" placeholder="Dirección" formControlName="direccion" required/>
 
-        <textarea placeholder="Descripción"></textarea>
+        <textarea placeholder="Descripción" formControlName="descripcion" required></textarea>
 
-        <div class="col-half"><input class="e" style="width: 100%;" type="text"  placeholder="Latitud" /></div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" /></div>
+        <div class="col-half"><input class="e" style="width: 100%;" type="text"  placeholder="Latitud" formControlName="latitud" required/></div>
+        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" formControlName="longitud" required/></div>
 
         <div class="col-half">
-            <select name='estado'>
+            <select name='estado' formControlName="estado" required>
                 <option selected value="">Seleccione un Estado</option>
             </select>
         </div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Horario" /></div>
-        
+        <div class="col-half"><input class="e" type="text"  placeholder="Horario" formControlName="horario" required></div>
+
 
         <div class="p">
-            <button type="button" class="boton"> Guardar </button>
+            <button type="button" class="boton" (click)="Guardar()"> Guardar </button>
         </div>
 
     </div>

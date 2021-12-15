@@ -54,7 +54,8 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
 
   gotoCollectionCenterCreate(){
     const dialogRef = this.dialog.open(CollectionCenterCreateComponent, {
-      width:'61%'
+      width:'61%',
+
     });
   }
 

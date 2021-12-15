@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../modelos/User';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,8 @@ export class UserService {
 
   getMeToken(){
     var token= localStorage.getItem('token');
+    console.log(token);
+    
     return token;
   }
   getlistUser(){

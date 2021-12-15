@@ -1,5 +1,5 @@
 export class CollectionCenter{
-    id:number;
+    id:string;
     nombre:string;
     descripcion:string;
     direccion:string;
@@ -9,7 +9,7 @@ export class CollectionCenter{
     longitud:number;
     telefono:number;
     
-    constructor(id:number,nombre: string, descripcion: string, direccion: string,estado:string, horario:string, latitud:number,longitud:number,telefono:number){
+    constructor(id:string,nombre: string, descripcion: string, direccion: string,estado:string, horario:string, latitud:number,longitud:number,telefono:number){
         this.id=id;
         this.nombre=nombre;
         this.descripcion=descripcion;
