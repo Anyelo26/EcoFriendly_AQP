@@ -62,7 +62,10 @@ export class InformationCreateComponent implements OnInit {
 
   public Guardar(){
     let data=this.formInformation.value;
-    let information = new Information(data.id,data.fecha,data.titulo,data.descripcion,data.url_imagen,data.tipo,data.detalle);
+    var d = data.detalle
+    var splitted = d.split("\n");
+    console.log(splitted);
+    let information = new Information(data.id,data.fecha,data.titulo,data.descripcion,data.url_imagen,data.tipo,splitted);
     console.log(information);
     this.service.crearInformation(information)
       .subscribe(data=>{

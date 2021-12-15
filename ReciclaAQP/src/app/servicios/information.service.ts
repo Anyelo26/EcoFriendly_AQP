@@ -27,23 +27,37 @@ export class InformationService {
 
   crearInformation(information:Information):Observable<any>{
     
+    let token = this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
     let rutacrear=this.url+"create/"
-    return this.http.post<Information>(rutacrear,information);
+    return this.http.post<Information>(rutacrear,information,{'headers': headers});
   }
 
   eliminarInformation(information:any):Observable<any>{
+    let token = this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
     let rutaeliminar=this.url+"delete/";
-    return this.http.post<Information>(rutaeliminar,information);
+    return this.http.post<Information>(rutaeliminar,information,{'headers': headers});
   }
 
   viewInformation(id:number):Observable<Information>{//tal vez pueda cambiarse a string
+
+    let token = this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
     let direccion= this.url+'retrieve/'+id;
-    return this.http.get<Information>(direccion);
+    return this.http.get<Information>(direccion,{'headers': headers});
   }
 
   editarInformation(information:Information):Observable<any>{
+
+    let token = this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
     let rutaedit=this.url+"update/";
-    return this.http.post<Information>(rutaedit,information);
+    return this.http.post<Information>(rutaedit,information,{'headers': headers});
   }
 
   
