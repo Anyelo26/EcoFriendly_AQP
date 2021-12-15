@@ -28,8 +28,7 @@ export class UserService {
     
     var token=this.getMeToken();
     console.log(token)
-    const headers = new HttpHeaders()
-      .set('Authorization','Bearer '+token)
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
     
     return this.http.get<User[]>(this.url, {'headers': headers})
   }

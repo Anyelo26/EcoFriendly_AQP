@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Information } from '../modelos/Information';
+
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InformationService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private user:UserService) { }
 
   ngOnInit(){
 
@@ -17,10 +19,14 @@ export class InformationService {
   url:string="http://127.0.0.1:8000/api/fichas/"
 
   getListInformation(){
-    return this.http.get<Information>(this.url)
+    let token= this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
+    return this.http.get<Information>(this.url,{'headers': headers})
   }
 
   crearInformation(information:Information):Observable<any>{
+    
     let rutacrear=this.url+"create/"
     return this.http.post<Information>(rutacrear,information);
   }
