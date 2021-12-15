@@ -1,10 +1,30 @@
-<nav>
-    <button class="menu" (click)='gotoInicio()'>Inicio</button>
-    <button class="menu" (click)='gotoUser()'>Usuarios Administrativos</button>
-    <button class="menu" (click)='gotoCentroAcopio()'>Centros de Acopio</button>
-    <button class="menu" (click)='gotoInformation()'>Información</button>
-    <button class="menu" (click)='gotoPerfil()'>Mi Perfil</button>
-    
-    <button class="boton" (click)='gobackInicio()'> Cerrar Sesión </button>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand logo" (click)='gotoInicio()'> ECOFRIENDLY </a>
+    <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+        <!--<li class="nav-item active">
+          <a class="nav-link menu" (click)='gotoInicio()'> Inicio </a>
+        </li>-->
+        <li class="nav-item active">
+          <a class="nav-link menu" (click)='gotoUser()'>Usuarios</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link menu" (click)='gotoCentroAcopio()'>Centros de Acopio</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link menu" (click)='gotoInformation()'>Fichas Informativas</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link menu" (click)='gotoPerfil()'>Mi Perfil</a>
+          </li>
+      </ul>
+      
+      <button class="btn btn-outline-dark my-2 my-sm-0" (click)='gobackInicio()'>Cerrar Sesión</button>
+
+    </div>
+  </nav>
 

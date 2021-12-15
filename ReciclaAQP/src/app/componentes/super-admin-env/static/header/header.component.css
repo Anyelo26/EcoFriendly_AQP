@@ -1,12 +1,23 @@
+nav{
+    margin-top: 1%;
+}
+
+.logo{
+    font-size: 25px;
+    font-family: Roboto;
+    font-style: bold;
+    margin-right: 25%;
+    margin-left: 1%;
+    cursor: pointer;
+}
+
 .menu{
-    margin-top: 3%;
-    margin-left: 2%;
-    margin-right: 2%;
     font-family: Roboto;
     font-style: normal;
     font-size: 15px;
     border: none;
     background-color: #FFFEF6;
+    cursor: pointer;
 }
 
 .menu:hover,
@@ -15,24 +26,7 @@
     border-bottom: 3px solid #01D98B;
 }
 
-.boton{
-    margin-left: 10%;
-    text-align: center;
-    padding: 10px 20px;
-    font-family: Roboto;
-    font-style: normal;
-    border: 1.5px solid #000000;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.boton:hover{
-    background-color: black;
-    color: white;
-    /*background-color: rgba(1, 217, 138, 0.219);
-    border: 1.5px solid #01D98B;*/
-}
-
 nav{
     text-align: center;
+    background-color: #FFFEF6;
 }

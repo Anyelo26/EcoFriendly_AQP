@@ -18,7 +18,8 @@ export class InformationCreateComponent implements OnInit {
     descripcion:new FormControl(''),
     url_imagen:new FormControl(''),
     tipo:new FormControl(''),
-    detalle: this.fb.array([this.fb.group([''])])
+    detalle: new FormControl('')
+    //detalle: this.fb.array([])
   });
 
   constructor(private service:InformationService, private fb:FormBuilder, 
@@ -38,19 +39,26 @@ export class InformationCreateComponent implements OnInit {
     }
   }
 
+  /*
   get getDetalle() {
     return this.formInformation.get('detalle') as FormArray;
   }
 
+
   addDetalle(){
     const control = <FormArray>this.formInformation.controls['detalle'];
     control.push(this.fb.group({detalle: []}));
+    //const detalle = this.fb.group({
+    //  detalle: new FormControl('')
+    //})
+    //this.getDetalle.push(detalle);
   }
 
   removeDetalle(index: number){
     const control = <FormArray>this.formInformation.controls['detalle'];
     control.removeAt(index);
-  }
+    //this.getDetalle.removeAt(index);
+  }*/
 
   public Guardar(){
     let data=this.formInformation.value;

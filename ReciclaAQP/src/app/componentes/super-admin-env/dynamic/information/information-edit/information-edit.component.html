@@ -1,1 +1,36 @@
-<p>information-edit works!</p>
+
+<form class="formulario" [formGroup]='formInformation'>
+    <div class="titulo">
+        <span> Nueva Ficha de Información </span>
+    </div>
+    <div class="linea">
+    </div>
+    <div class="contenido">
+
+        <input type="text" formControlName="titulo" placeholder="Titulo" />
+        
+        <div class="col-half">
+            <select name='tipoInformacion' formControlName="tipo">
+                <option selected value="">Seleccione un tipo</option>
+            </select>
+        </div>
+        
+        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" /></div>
+        
+        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        
+        <input type="text"  formControlName="url_imagen" placeholder="Url"/>
+
+        <!--<h4> Detalle <span> (Maximo agregar 3 items) </span></h4>-->
+        
+        <input type="text"  formControlName="detalle" placeholder="Detalle"/>
+        
+        <div mat-dialog-actions class="p">
+            <button type="button" class="boton" > Editar Ficha de Informativa </button>
+        </div>
+
+    </div>
+
+</form>
+
+

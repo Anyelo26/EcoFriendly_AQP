@@ -21,15 +21,17 @@
         
         <input type="text"  formControlName="url_imagen" placeholder="Url"/>
 
-        <h4> Detalle <span> (Maximo agregar 5 items) </span></h4>
+        <!--<h4> Detalle <span> (Maximo agregar 5 items) </span></h4>-->
         
-        <div formArray="detalle">
-            <div *ngFor="let item of getDetalle.controls; let pointIndex=index" [formGroupName]=pointIndex>
+        <input type="text"  formControlName="detalle" placeholder="Detalle"/>
+
+        <!--<div formArrayName="detalle">
+            <div *ngFor="let item of getDetalle.controls; let pointIndex=index">
                 <input class="especial" formControlName="detalle" /> 
-                <a class="btn btn-outline-danger" (click)="removeDetalle(pointIndex)"><mat-icon>remove icon</mat-icon></a>
-                <a class="btn btn-outline-success" (click)="addDetalle()"><mat-icon>add</mat-icon></a>
+                <a class="btn btn-outline-danger" (click)="removeDetalle(pointIndex)">Eliminar</a>
             </div>
-        </div>
+            <a class="btn btn-outline-success" (click)="addDetalle()">Añadir</a>
+        </div>-->
 
         <div mat-dialog-actions class="p">
             <button type="button" class="boton" (click)='Guardar()'> Agregar Ficha de Informativa </button>

@@ -10,7 +10,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  public isCollapsed = true;
+  
   ngOnInit(): void {
+    this.isCollapsed = true;
   }
 
   gotoInicio(){
