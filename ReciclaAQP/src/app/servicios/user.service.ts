@@ -32,6 +32,28 @@ export class UserService {
     
     return this.http.get<User[]>(this.url, {'headers': headers})
   }
+  viewUser(data: any):Observable<User>{
+    var token=this.getMeToken();
+    console.log(token)
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
+    let direccion= this.url+'/retrieve/';
+
+    return this.http.post<User>(direccion,data, {'headers': headers})
+
+  }
+  editUser(){
+    var token=this.getMeToken();
+    console.log(token)
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
+  }
+  deleteUser(){
+    var token=this.getMeToken();
+    console.log(token)
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+
+  }
 
 
 }

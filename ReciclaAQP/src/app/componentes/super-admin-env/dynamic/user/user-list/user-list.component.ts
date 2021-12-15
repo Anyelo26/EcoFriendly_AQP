@@ -68,10 +68,14 @@ export class UserListComponent implements OnInit,AfterViewInit {
     });
   }
 
-  gotoUserView(){
+  gotoUserView(identifica:String){
     const dialogRef = this.dialog.open(UserViewComponent, {
-      width:'61%'
+      width:'61%',
+      data:{id:identifica}
     });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToUserList();
+   });
   }
   goToUserList(){
     this.userService.getlistUser2().subscribe(
