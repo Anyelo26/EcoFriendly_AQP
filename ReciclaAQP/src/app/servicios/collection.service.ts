@@ -25,9 +25,12 @@ export class CollectionService {
     return this.http.post<CollectionCenter>(ruta,collectionCenter,{'headers': headers})
 
   }
-  viewCollectionCenter(id: String){
+  viewCollectionCenter(id: any):Observable<CollectionCenter>{
+    let token=this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+    
     let ruta =this.url+"retrieve/";
-    return this.http.post<CollectionCenter>(ruta,id);
+    return this.http.post<CollectionCenter>(ruta,id,{'headers': headers});
   }
   editCollectionCenter(){
 

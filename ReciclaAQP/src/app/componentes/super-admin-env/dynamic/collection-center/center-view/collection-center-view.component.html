@@ -7,33 +7,33 @@
     </div>
     <div class="contenido">
 
-        <input type="text" placeholder="Nombre del Centro de Acopio" readonly/>
+        <input type="text" placeholder="Nombre del Centro de Acopio" value="{{datosCentro.nombre}}" readonly/>
         
         <div class="col-half">
             <select name='tipoCentro'>
-                <option selected value="">Seleccione una Categoria</option>
+                <option selected value="">{{datosCentro.categoria}}</option>
             </select>
         </div>
 
-        <div class="col-half"><input class="e" type="tel"  placeholder="Telefono" readonly/></div>
+        <div class="col-half"><input class="e" type="tel"  value="{{datosCentro.telefono}}"placeholder="Telefono" readonly/></div>
         
-        <input type="text" placeholder="Dirección" readonly/>
+        <input type="text" value="{{datosCentro.direccion}}" placeholder="Dirección" readonly/>
 
-        <textarea placeholder="Descripción" readonly></textarea>
+        <textarea placeholder="Descripción" value="{{datosCentro.descripcion}}" readonly></textarea>
 
-        <div class="col-half"><input class="e" style="width: 100%;" type="text"  placeholder="Latitud" readonly/></div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" readonly/></div>
+        <div class="col-half"><input class="e" style="width: 100%;" type="text"  value="{{datosCentro.latitud}}" placeholder="Latitud" readonly/></div>
+        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" value="{{datosCentro.longitud}}" readonly/></div>
 
         <div class="col-half">
             <select name='estado'>
-                <option selected value="">Seleccione un Estado</option>
+                <option selected value="">{{datosCentro.estado}}</option>
             </select>
         </div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Horario" readonly/></div>
+        <div class="col-half"><input class="e" type="text" value="{{datosCentro.horario}}" placeholder="Horario" readonly/></div>
         
 
         <div class="p">
-            <button type="button" class="boton"> Aceptar </button>
+            <button type="button" (click)='onNoClick()' class="boton"> Aceptar </button>
         </div>
 
     </div>

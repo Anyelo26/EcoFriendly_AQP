@@ -80,9 +80,10 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
     });
   }
 
-  gotoCollectionCenterView(){
+  gotoCollectionCenterView(identifica: String){
     const dialogRef = this.dialog.open(CollectionCenterViewComponent, {
-      width:'61%'
+      width:'61%',
+      data:{id:identifica},
     });
   }
   goToListCollectionCenter(){
