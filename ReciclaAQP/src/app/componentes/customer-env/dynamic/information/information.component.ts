@@ -36,7 +36,7 @@ export class InformationComponent implements OnInit {
     )
   }
 
-  goInformationDetail(id_ficha:number){
+  goInformationDetail(){
     //this.router.navigate(['/Detail', id_ficha]);
     this.router.navigate(['/Detail']);
   }

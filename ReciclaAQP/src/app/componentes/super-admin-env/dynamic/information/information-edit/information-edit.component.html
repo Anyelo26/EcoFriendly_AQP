@@ -1,7 +1,7 @@
 
-<form class="formulario" [formGroup]='formInformation'>
+<form class="formulario" [formGroup]='formInformation' (ngSubmit)="Editar(formInformation.value)">
     <div class="titulo">
-        <span> Nueva Ficha de Información </span>
+        <span> Edición Ficha de Información </span>
     </div>
     <div class="linea">
     </div>

@@ -50,30 +50,6 @@ export class InformationListComponent implements OnInit,AfterViewInit {
     }
   }
 
-  gotoInformationCreate(){
-    const dialogRef = this.dialog.open(InformationCreateComponent,{
-      width:'61%'
-    })
-  }
-
-  gotoInformationEdit(){
-    const dialogRef = this.dialog.open(InformationEditComponent,{
-      width:'61%'
-    })
-  }
-
-  gotoInformationDelete(){
-    const dialogRef = this.dialog.open(InformationDeleteComponent,{
-      width:'30%'
-    })
-  }
-
-  gotoInformationView(){
-    const dialogRef = this.dialog.open(InformationViewComponent,{
-      width:'61%'
-    })
-  }
-
   goToInformationList(){
     this.informationService.getListInformation().subscribe(
       (response)=>{
@@ -85,9 +61,45 @@ export class InformationListComponent implements OnInit,AfterViewInit {
       (error)=>{
         console.log("error"+error)
       }
-
     )
-
   }
+
+  gotoInformationCreate(){
+    const dialogRef = this.dialog.open(InformationCreateComponent,{
+      width:'61%'
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToInformationList();
+    });
+  }
+
+  gotoInformationEdit(identifica:any){
+    const dialogRef = this.dialog.open(InformationEditComponent,{
+      width:'61%',
+      data: {id: identifica},
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToInformationList();
+    });
+  }
+
+  gotoInformationDelete(info:Information){
+    const dialogRef = this.dialog.open(InformationDeleteComponent,{
+      width:'30%',
+      data: info
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToInformationList();
+    })
+  }
+
+  gotoInformationView(identifica:any){
+    const dialogRef = this.dialog.open(InformationViewComponent,{
+      width:'61%',
+      data: {id: identifica}
+    })
+  }
+
+  
 
 }

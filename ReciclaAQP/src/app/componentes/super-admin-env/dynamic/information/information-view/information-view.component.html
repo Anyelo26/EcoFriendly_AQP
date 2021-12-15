@@ -1,1 +1,42 @@
-<p>information-view works!</p>
+<form class="formulario" [formGroup]='formInformation'>
+    <div class="titulo">
+        <span> Ficha Informativa : {{datosficha.id}} </span>
+    </div>
+    <div class="linea">
+    </div>
+    <div class="contenido">
+
+        <input type="text" formControlName="titulo" placeholder="Titulo" />
+        
+        <div class="col-half">
+            <select name='tipoInformacion' formControlName="tipo">
+                <option selected value="">Seleccione un tipo</option>
+            </select>
+        </div>
+        
+        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" /></div>
+        
+        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        
+        <input type="text"  formControlName="url_imagen" placeholder="Url"/>
+
+        <!--<h4> Detalle <span> (Maximo agregar 5 items) </span></h4>-->
+        
+        <input type="text"  formControlName="detalle" placeholder="Detalle"/>
+
+        <!--<div formArrayName="detalle">
+            <div *ngFor="let item of getDetalle.controls; let pointIndex=index">
+                <input class="especial" formControlName="detalle" /> 
+                <a class="btn btn-outline-danger" (click)="removeDetalle(pointIndex)">Eliminar</a>
+            </div>
+            <a class="btn btn-outline-success" (click)="addDetalle()">Añadir</a>
+        </div>-->
+
+        <div mat-dialog-actions class="p">
+            <button type="button" class="boton" (click)='onNoClick()'> Aceptar </button>
+        </div>
+
+    </div>
+
+</form>
+

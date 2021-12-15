@@ -25,9 +25,20 @@ export class InformationService {
     return this.http.post<Information>(rutacrear,information);
   }
 
-  eliminarInformation(idinformation:any):Observable<any>{
+  eliminarInformation(information:any):Observable<any>{
     let rutaeliminar=this.url+"delete/";
-    return this.http.post<Information>(rutaeliminar,idinformation);
+    return this.http.post<Information>(rutaeliminar,information);
   }
 
+  viewInformation(id:number):Observable<Information>{//tal vez pueda cambiarse a string
+    let direccion= this.url+'retrieve/'+id;
+    return this.http.get<Information>(direccion);
+  }
+
+  editarInformation(information:Information):Observable<any>{
+    let rutaedit=this.url+"update/";
+    return this.http.post<Information>(rutaedit,information);
+  }
+
+  
 }

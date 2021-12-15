@@ -1,5 +1,5 @@
 export class Information{
-    id:number;
+    id:string;
     fecha:string;
     titulo:string;
     descripcion:string;
@@ -7,7 +7,7 @@ export class Information{
     tipo:string;
     detalle:string[];
 
-    constructor(id:number,fecha:string,titulo:string,descripcion:string,url_imagen:string,tipo:string,detalle:string[]){
+    constructor(id:string,fecha:string,titulo:string,descripcion:string,url_imagen:string,tipo:string,detalle:string[]){
         this.id=id;
         this.fecha=fecha;
         this.titulo=titulo;

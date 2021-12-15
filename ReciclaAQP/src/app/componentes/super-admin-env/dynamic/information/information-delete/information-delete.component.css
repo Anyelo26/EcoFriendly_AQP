@@ -28,18 +28,7 @@
     text-align: center;
     color: black;
 }
-.boton{
-    background: #EABD4B;
-    border-radius: 5px;
-    width: 190px;
-    height: 35px;
-    font-family: Dosis;
-    font-style: normal;
-    font-size: 16px;
-    text-align: center;
-    color: #FFFFFF;
-    position: absolute;
-}
+
 .boton2{
     background: #055242;
     border-radius: 5px;
@@ -50,6 +39,6 @@
     font-size: 16px;
     text-align: center;
     color: #FFFFFF;
-    margin-left: 52%;
     position: relative;
+    margin-left: 25%;
 }

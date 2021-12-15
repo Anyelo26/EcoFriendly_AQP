@@ -13,20 +13,42 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class InformationEditComponent implements OnInit {
 
-  formInformation = new FormGroup({
-    fecha: new FormControl(''),
-    titulo: new FormControl(''),
-    descripcion: new FormControl(''),
-    url_imagen: new FormControl(''),
-    tipo: new FormControl(''),
-    detalle: new FormControl('')
-  });
+  public datosficha: Information={id:'',titulo:'', fecha:'',descripcion:'',tipo:'',url_imagen:'',detalle:[]}
 
-  constructor(private service:InformationService, private fb:FormBuilder, 
-    public dialogRef: MatDialogRef<InformationEditComponent>, @Inject(MAT_DIALOG_DATA) public data: Information) { }
+  public formInformation!:FormGroup;
+  contruirFormulario(){
+    this.formInformation = new FormGroup({
+      fecha: new FormControl(''),
+      titulo: new FormControl(''),
+      descripcion: new FormControl(''),
+      url_imagen: new FormControl(''),
+      tipo: new FormControl(''),
+      detalle: new FormControl('')
+    });
+  }
+
+  
+
+  constructor(
+    private service:InformationService, 
+    private fb:FormBuilder, 
+    public dialogRef: MatDialogRef<InformationEditComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+    this.contruirFormulario();
     this.cargarTipo();
+    this.service.viewInformation(Number(this.data.id))
+    .subscribe(
+      (response:Information) =>{
+        console.log(response)
+        this.formInformation.setValue(response)
+        return this.datosficha=response;
+      },
+      (error) =>{
+        console.log('error'+error);
+      }
+    )
   }
 
   public cargarTipo(){
@@ -38,4 +60,16 @@ export class InformationEditComponent implements OnInit {
       selector.append(opcion);
     }
   }
+
+  Editar(formulario:Information){
+    this.data=this.datosficha;
+    this.service.editarInformation(formulario)
+      .subscribe(
+        (response:Information)=>{
+          this.dialogRef.close();
+          return this.data=response;
+        }
+      )
+  }
+
 }
