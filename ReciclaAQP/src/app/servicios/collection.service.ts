@@ -32,7 +32,12 @@ export class CollectionService {
   editCollectionCenter(){
 
   }
-  deleteCollectionCenter(){
+  deleteCollectionCenter(data:any){
+    let token= this.user.getMeToken();
+    const headers= new HttpHeaders().set('Authorization','Bearer '+token)
+
+    let ruta= this.url+"delete/"
+    return this.http.post<CollectionCenter>(ruta,data,{'headers': headers});
 
   }
 }

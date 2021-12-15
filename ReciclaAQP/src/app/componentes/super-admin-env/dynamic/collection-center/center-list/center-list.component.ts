@@ -69,9 +69,11 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
     });
   }
 
-  gotoCollectionCenterDelete(){
+  gotoCollectionCenterDelete(identifica:String){
     const dialogRef = this.dialog.open(CollectionCenterDeleteComponent, {
-      width:'30%'
+      width:'30%',
+      
+      data:{id:identifica},
     });
     dialogRef.afterClosed().subscribe(Response=>{
       this.goToListCollectionCenter();
