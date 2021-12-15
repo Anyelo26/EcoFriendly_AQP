@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { LoginService } from 'src/app/servicios/Login.service';
+import { Login } from 'src/app/modelos/Login';
 
 @Component({
   selector: 'app-login',
@@ -11,67 +13,50 @@ export class LoginComponent implements OnInit {
 
 
   loginForm=new FormGroup({
-    username : new FormControl('',Validators.required),
+    email : new FormControl('',Validators.required),
     password : new FormControl('',Validators.required),
   })
 
-  constructor() { }
+  loginError=false;
+  constructor(private loginService:LoginService,private router:Router) { }
+
 
   ngOnInit(): void {
   }
-  /*onLoginAdmin(form:Login){
-    this.loginService.authLogin(form).subscribe(data =>{
-      if(data.token!=null){
-        localStorage.setItem('token',data.token);
-        localStorage.setItem('usuario',data.usuario);
-        this.router.navigate(['dashboard/courseList'])
-      }
-    });
-  }
-  onLoginPonente(form:Login){
-      this.router.navigate(['ponentes/misCursos'])
-   
-  }
-  onLoginDocente(form:Login){
-      this.router.navigate(['docentes/CertificateTeacher'])
-  
-  }
-  typeUser: string = '';
-  flag:boolean=false;
+
+  onLogin(form:Login){
+    this.loginService.authLogin(form).subscribe
+    (
+      (response) =>{
+        console.log(response);
+        localStorage.setItem('token',response.token);
+        localStorage.setItem('id',response.id);
+        localStorage.setItem('rol',response.rol)
+       // localStorage.setItem('docente',"SI");
+       this.router.navigate(['SuperAdmin/CollectionCenterList'])
+      
+    },
+    (error)=>{
+      this.loginError=true;
+      this.router.navigate(['SuperAdmin/CollectionCenterList'])
+    });  
+ 
+}
+
+
   user: any = '';
   pass: any = '';
 
-  selectChangeHandler (event: any) {
-  
-    this.typeUser = event.target.value;
-    
-  }
   clickEvent(){
    
-    this.user=this.loginForm.get('username');
+    this.user=this.loginForm.get('email');
     this.pass=this.loginForm.get('password');
     if(this.user!="" && this.pass!=""){
-      
-      if (this.typeUser=="Administrador"){
-        this.onLoginAdmin(this.loginForm.value);
-        
-      }
-      if (this.typeUser=="Ponente" ){
-        this.onLoginPonente(this.loginForm.value);
-        
-      }
-      if (this.typeUser=="Docente"){
-        this.onLoginDocente(this.loginForm.value);
-       
-      }
-      if (this.typeUser=="Apoyo en la Organizacion"){
-        this.onLoginDocente(this.loginForm.value);
-        
-      }
-      if (this.typeUser=="Organizador"){
-        this.onLoginDocente(this.loginForm.value);
-   
-      }
+      this.onLogin(this.loginForm.value);
+      console.log(this.loginForm.value)
     }
-  }*/
+  }
+  LoginFailed(){
+    return this.loginError;
+  }
 }

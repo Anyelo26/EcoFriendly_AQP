@@ -9,7 +9,7 @@
 </div>
 <div class="con-de">
     <div class="mu-de">
-        <form >
+        <form [formGroup]="loginForm">
 
             <h3 class="la"> INICIO DE SESIÓN</h3>
             <br />
@@ -19,7 +19,7 @@
             <input 
                 type="text" 
                 name="usuario"
-                formControlName="username"
+                formControlName="email"
             />
             <br />
             <label> Contraseña</label>
@@ -31,11 +31,9 @@
                 formControlName="password"
             />
             <br />
-            <select name='cuenta' >
-                <option hidden selected value="Administrador">Administrador</option>
-                <option >Administrador</option>
-              </select>
-            <button type="submit" class="boton" > Ingresar </button>
+     
+              <label *ngIf="LoginFailed()" style="color: red;"> Los datos de usuario y/o contraseña son incorrectos.</label>
+              <button type="submit" class="boton" (click)="clickEvent()"> Ingresar </button>
         </form>
     </div>
     <!--<div class="mu-de-a">
