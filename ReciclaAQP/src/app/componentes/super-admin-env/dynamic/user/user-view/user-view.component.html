@@ -1,21 +1,21 @@
 
 <form class="formulario">
     <div class="titulo">
-        <span> Usuario :  </span>
+        <span> Usuario : {{datosUser.rol}} </span>
     </div>
     <div class="linea">
     </div>
     <div class="contenido">
 
-        <input type="text" placeholder="Nombre de Usuario" readonly/>
-        <input type="email" placeholder="Correo" readonly/>
-        <input type="password" placeholder="Contraseña" readonly/>
-        <input type="text" placeholder="Estado" readonly/>
+        <input type="text" placeholder="Nombre de Usuario" value="{{datosUser.nombre}}"readonly/>
+        <input type="text" placeholder="Apellido de Usuario" value="{{datosUser.apellido}}"readonly/>
+        <input type="email" placeholder="Correo" value="{{datosUser.email}}" readonly/>
+        <input type="password" placeholder="Contraseña" value ="Dato Protegido" readonly/>
+        <input type="text" placeholder="Estado" value="{{datosUser.estado}}"readonly/>
         
-        <textarea placeholder="Observaciones"readonly></textarea>
 
         <div class="p">
-            <button type="button" class="boton"> Aceptar </button>
+            <button type="button" class="boton" (click)="onNoClick()"> Aceptar </button>
         </div>
 
     </div>
