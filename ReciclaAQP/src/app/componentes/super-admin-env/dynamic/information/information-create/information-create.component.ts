@@ -30,7 +30,7 @@ export class InformationCreateComponent implements OnInit {
   }
 
   public cargarTipo(){
-    var tipo = ['Metales','Plastico','Papel Reutilizable','vidrio','Desechos Organicos','Baterias y pilas','Aceite','RAEE','Tipos de Contenedores'];
+    var tipo = ['Metales','Plastico','Papel Reutilizable','Vidrio','Desechos Organicos','Baterias y pilas','Aceite','RAEE','Tipos de Contenedores'];
     var selector = document.getElementsByName('tipoInformacion')[0];
     for( let tipos in tipo){
       var opcion = document.createElement('option');

@@ -6,7 +6,7 @@
     </div>
     <div class="contenido">
 
-        <input type="text" formControlName="titulo" placeholder="Titulo" />
+        <input type="text" formControlName="titulo" placeholder="Titulo" readonly/>
         
         <div class="col-half">
             <select name='tipoInformacion' formControlName="tipo">
@@ -14,15 +14,15 @@
             </select>
         </div>
         
-        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" /></div>
+        <div class="col-half"><input class="e" type="date"  formControlName="fecha" placeholder="Fecha" readonly/></div>
         
-        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        <textarea  formControlName="descripcion" placeholder="Descripción" readonly></textarea>
         
-        <input type="text"  formControlName="url_imagen" placeholder="Url"/>
+        <input type="text"  formControlName="url_imagen" placeholder="Url" readonly/>
 
         <!--<h4> Detalle <span> (Maximo agregar 5 items) </span></h4>-->
         
-        <input type="text"  formControlName="detalle" placeholder="Detalle"/>
+        <input type="text"  formControlName="detalle" placeholder="Detalle" readonly/>
 
         <!--<div formArrayName="detalle">
             <div *ngFor="let item of getDetalle.controls; let pointIndex=index">
