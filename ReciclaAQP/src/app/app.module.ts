@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ToastrModule } from 'ngx-toastr'
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -28,7 +29,7 @@ import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDialogModule } from '@angular/material/dialog';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AgmCoreModule } from '@agm/core';
@@ -68,13 +69,17 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    ToastrModule.forRoot({positionClass:'toast-bottom-right'}),
+    ToastrModule.forRoot( {positionClass: 'toast-bottom-right'}),
     AgmCoreModule.forRoot({
       apiKey: ""
     })
     
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
+    ,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

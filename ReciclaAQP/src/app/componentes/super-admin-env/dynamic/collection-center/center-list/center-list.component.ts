@@ -57,6 +57,10 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
       width:'61%',
 
     });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToListCollectionCenter();
+    });
+
   }
 
   gotoCollectionCenterEdit(){
@@ -68,6 +72,9 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
   gotoCollectionCenterDelete(){
     const dialogRef = this.dialog.open(CollectionCenterDeleteComponent, {
       width:'30%'
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToListCollectionCenter();
     });
   }
 

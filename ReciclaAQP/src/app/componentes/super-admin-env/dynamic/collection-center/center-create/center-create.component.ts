@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 
 import { CollectionCenter } from 'src/app/modelos/CollectionCenter';
@@ -31,6 +31,7 @@ export class CollectionCenterCreateComponent implements OnInit {
     private fb:FormBuilder,
     public dialogRef:MatDialogRef<CollectionCenter>,
     private collectionCenterService:CollectionService,
+    @Inject(MAT_DIALOG_DATA) public data: CollectionCenter,
     private toastr:ToastrService) { }
     
   ngOnInit(): void {
@@ -60,11 +61,11 @@ export class CollectionCenterCreateComponent implements OnInit {
   public Guardar(){
     let dataCentroAcopio=this.formCenter.value;
   
-    let center =new CollectionCenter("0",dataCentroAcopio.nombre,dataCentroAcopio.descripcion,dataCentroAcopio.direccion,dataCentroAcopio.estado,dataCentroAcopio.horario,dataCentroAcopio.latitud,dataCentroAcopio.longitud,dataCentroAcopio.telefono);
+    let center =new CollectionCenter(dataCentroAcopio.id,dataCentroAcopio.categoria,dataCentroAcopio.nombre,dataCentroAcopio.descripcion,dataCentroAcopio.direccion,dataCentroAcopio.estado,dataCentroAcopio.horario,Number(dataCentroAcopio.latitud),Number(dataCentroAcopio.longitud),dataCentroAcopio.telefono);
     console.log(center);
     this.collectionCenterService.createCollectionCenter(center)
      .subscribe(
-       data=>{
+       (response)=>{
         this.toastr.success('Se agrego exitosamente el centro de acopio','Nuevo Centro de acopio')
         this.dialogRef.close();
     })
