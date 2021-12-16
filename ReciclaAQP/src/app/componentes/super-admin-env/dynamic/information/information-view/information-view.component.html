@@ -5,32 +5,31 @@
     <div class="linea">
     </div>
     <div class="contenido">
-
+        
+        <div class="nombrecito"> Titulo </div>
         <input type="text" placeholder="Titulo" value="{{datosFicha.titulo}}" readonly/>
         
         <div class="col-half">
+            <div class="nombrecito"> Tipo o Categoria </div>
             <select name='tipoInformacion'>
                 <option selected value="">{{datosFicha.tipo}}</option>
             </select>
         </div>
         
-        <div class="col-half"><input class="e" type="date" placeholder="Fecha" value="{{datosFicha.fecha}}" readonly/></div>
+        <div class="col-half">
+            <div class="nombrecito"> Fecha de Creación </div>
+            <input class="e" type="date" placeholder="Fecha" value="{{datosFicha.fecha}}" readonly/>
+        </div>
         
+        <div class="nombrecito"> Descripción </div>
         <textarea placeholder="Descripción" value="{{datosFicha.descripcion}}" readonly></textarea>
         
+        <div class="nombrecito"> URL de la Imagen </div>
         <input type="text" placeholder="Url" value="{{datosFicha.url_imagen}}" readonly/>
 
-        <!--<h4> Detalle <span> (Maximo agregar 5 items) </span></h4>-->
+        <div class="nombrecito"> Detalle </div>
         
-        <textarea placeholder="Detalle" value="{{datosFicha.detalle}}"></textarea>
-
-        <!--<div formArrayName="detalle">
-            <div *ngFor="let item of getDetalle.controls; let pointIndex=index">
-                <input class="especial" formControlName="detalle" /> 
-                <a class="btn btn-outline-danger" (click)="removeDetalle(pointIndex)">Eliminar</a>
-            </div>
-            <a class="btn btn-outline-success" (click)="addDetalle()">Añadir</a>
-        </div>-->
+        <textarea class="especial" placeholder="Detalle" value="{{datosFicha.detalle}}"></textarea>
 
         <div mat-dialog-actions class="p">
             <button type="button" class="boton" (click)='onNoClick()'> Aceptar </button>

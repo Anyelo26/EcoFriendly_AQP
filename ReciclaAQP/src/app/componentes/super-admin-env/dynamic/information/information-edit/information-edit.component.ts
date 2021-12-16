@@ -72,4 +72,8 @@ export class InformationEditComponent implements OnInit {
       )
   }
 
+  public Cancelar(){
+    this.dialogRef.close();
+  }
+
 }

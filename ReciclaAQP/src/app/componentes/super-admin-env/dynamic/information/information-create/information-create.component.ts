@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Information } from 'src/app/modelos/Information';
 import { InformationService } from 'src/app/servicios/information.service';
+import { ToastrService } from 'ngx-toastr';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-information-create',
@@ -13,17 +15,22 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class InformationCreateComponent implements OnInit {
 
   formInformation:FormGroup=this.fb.group({
-    fecha:new FormControl(''),
-    titulo:new FormControl(''),
-    descripcion:new FormControl(''),
-    url_imagen:new FormControl(''),
-    tipo:new FormControl(''),
-    detalle: new FormControl('')
-    //detalle: this.fb.array([])
+    fecha:new FormControl('',[Validators.required]),
+    titulo:new FormControl('',[Validators.required]),
+    descripcion:new FormControl('',[Validators.required]),
+    url_imagen:new FormControl('',[Validators.required]),
+    tipo:new FormControl('',[Validators.required]),
+    detalle: new FormControl('',[Validators.required])
   });
 
-  constructor(private service:InformationService, private fb:FormBuilder, 
-    public dialogRef: MatDialogRef<InformationCreateComponent>, @Inject(MAT_DIALOG_DATA) public data: Information) { }
+  constructor(
+    private service:InformationService, 
+    private fb:FormBuilder, 
+    public dialogRef: MatDialogRef<InformationCreateComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: Information,
+    private toastr:ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.cargarTipo();
@@ -39,27 +46,6 @@ export class InformationCreateComponent implements OnInit {
     }
   }
 
-  /*
-  get getDetalle() {
-    return this.formInformation.get('detalle') as FormArray;
-  }
-
-
-  addDetalle(){
-    const control = <FormArray>this.formInformation.controls['detalle'];
-    control.push(this.fb.group({detalle: []}));
-    //const detalle = this.fb.group({
-    //  detalle: new FormControl('')
-    //})
-    //this.getDetalle.push(detalle);
-  }
-
-  removeDetalle(index: number){
-    const control = <FormArray>this.formInformation.controls['detalle'];
-    control.removeAt(index);
-    //this.getDetalle.removeAt(index);
-  }*/
-
   public Guardar(){
     let data=this.formInformation.value;
     var d = data.detalle
@@ -69,9 +55,14 @@ export class InformationCreateComponent implements OnInit {
     console.log(information);
     this.service.crearInformation(information)
       .subscribe(data=>{
+        this.toastr.success('Se agrego exitosamente una ficha informatica','Nuevo Ficha')
         this.dialogRef.close();
       })
 
+  }
+
+  public Cancelar(){
+    this.dialogRef.close();
   }
 
 }
