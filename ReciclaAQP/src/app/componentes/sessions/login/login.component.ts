@@ -28,18 +28,20 @@ export class LoginComponent implements OnInit {
     this.loginService.authLogin(form).subscribe
     (
       (response) =>{
-        console.log(response);
+        //console.log(response);
         localStorage.setItem('token',response.token);
         localStorage.setItem('id',response.id);
         localStorage.setItem('rol',response.rol)
        // localStorage.setItem('docente',"SI");
-       this.router.navigate(['SuperAdmin/CollectionCenterList'])
+       if(response.token!=null){
+        this.router.navigate(['SuperAdmin/CollectionCenterList'])
+       }
+       else{
+        this.loginError=true;
+       }
       
     },
-    (error)=>{
-      this.loginError=true;
-      this.router.navigate(['SuperAdmin/CollectionCenterList'])
-    });  
+   );  
  
 }
 
@@ -53,7 +55,7 @@ export class LoginComponent implements OnInit {
     this.pass=this.loginForm.get('password');
     if(this.user!="" && this.pass!=""){
       this.onLogin(this.loginForm.value);
-      console.log(this.loginForm.value)
+      //console.log(this.loginForm.value)
     }
   }
   LoginFailed(){

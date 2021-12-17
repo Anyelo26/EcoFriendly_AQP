@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { reduceEachLeadingCommentRange } from 'typescript';
 
 @Component({
   selector: 'app-header',
@@ -35,8 +36,16 @@ export class HeaderComponent implements OnInit {
   gotoInformation(){
     this.router.navigate(['/SuperAdmin/InformationList'])
   }
-
-  gobackInicio(){
-    this.router.navigate(['/'])
+  
+  logOut(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('rol');
+    //location.reload();
+    this.router.navigate(['/']);
+    //location.reload();
   }
+ // Reload(){
+ //   location.reload()
+ // }
 }

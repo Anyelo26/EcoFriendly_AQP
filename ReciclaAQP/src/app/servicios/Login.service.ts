@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class LoginService {
 
   url:string="http://127.0.0.1:8000/api/usuarios/login/";
+  //url:string="https://tranquil-cliffs-10384.herokuapp.com/api/usuarios/login/";
 
   constructor(private http:HttpClient) { }
 
