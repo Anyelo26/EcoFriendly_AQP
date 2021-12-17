@@ -72,4 +72,7 @@ export class CollectionCenterCreateComponent implements OnInit {
 
   }
 
+  public Cancelar(){
+    this.dialogRef.close();
+  }
 }

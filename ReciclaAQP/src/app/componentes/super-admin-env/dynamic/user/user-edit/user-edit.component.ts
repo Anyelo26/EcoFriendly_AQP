@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-edit',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<UserEditComponent>
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public Cancelar(){
+    this.dialogRef.close();
   }
 
 }

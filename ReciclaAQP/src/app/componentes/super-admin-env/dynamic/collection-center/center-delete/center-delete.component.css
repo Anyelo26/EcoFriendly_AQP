@@ -29,16 +29,46 @@
     color: black;
 }
 
-.boton2{
-    background: #055242;
+.boton{
+    background: #ffffff;
     border-radius: 5px;
-    width: 190px;
+    width: 150px;
     height: 35px;
     font-family: Dosis;
     font-style: normal;
     font-size: 16px;
     text-align: center;
-    color: #FFFFFF;
-    position: relative;
-    margin-left: 25%;
+    color: #000000;
+    margin-left: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #055242;
+}
+
+.boton:hover{
+    background: #055242;
+    color: #ffffff;
+}
+
+.boton2{
+    background: #ffffff;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    font-family: Dosis;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #EABD4B;
+}
+
+.boton2:hover{
+    background: #EABD4B;
+    color: #ffffff;
 }

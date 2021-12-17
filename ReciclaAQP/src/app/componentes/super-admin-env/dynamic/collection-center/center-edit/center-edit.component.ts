@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-collection-center-edit',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionCenterEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef:MatDialogRef<CollectionCenterEditComponent>,
+  ) { }
 
   ngOnInit(): void {
     this.cargarCategoria();
@@ -32,6 +35,10 @@ export class CollectionCenterEditComponent implements OnInit {
       opcion.text = estado[tipos];
       selector.append(opcion);
     }
+  }
+
+  public Cancelar(){
+    this.dialogRef.close();
   }
 
 }

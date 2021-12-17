@@ -33,9 +33,28 @@ input{
 ::placeholder{
     font-family: Dosis;
     font-style: normal;
-    font-weight: bold;
     font-size: 15px;
+    color: #9e9e9e;
+}
+
+.validador{
+    margin-left: 5%;
+    color: rgb(204, 0, 0);
+    font-size: 0.7rem;
+}
+
+h4{
     color: #055242;
+    font-weight:500;
+    font-size: 15px;
+    margin-left: 5%;
+    margin-bottom: 0%;
+    font-family: Dosis;
+    font-style: bold;
+}
+
+h4 span{
+    font-size: 10px;
 }
 
 textarea{
@@ -53,7 +72,7 @@ textarea{
 }
 
 .boton{
-    background: #055242;
+    background: #ffffff;
     border-radius: 5px;
     width: 250px;
     height: 35px;
@@ -61,6 +80,37 @@ textarea{
     font-style: normal;
     font-size: 16px;
     text-align: center;
-    color: #FFFFFF;
-    margin-left: 35%;
+    color: #000000;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #055242;
+}
+
+.boton:hover{
+    background: #055242;
+    color: #ffffff;
+}
+
+.boton2{
+    background: #ffffff;
+    border-radius: 5px;
+    width: 250px;
+    height: 35px;
+    font-family: Dosis;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #EABD4B;
+}
+
+.boton2:hover{
+    background: #EABD4B;
+    color: #ffffff;
 }

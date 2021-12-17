@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-delete',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<UserDeleteComponent>,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public Cancelar(){
+    this.dialogRef.close();
   }
 
 }

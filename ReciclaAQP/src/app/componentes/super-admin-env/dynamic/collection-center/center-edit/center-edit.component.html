@@ -7,33 +7,51 @@
     </div>
     <div class="contenido">
 
+        <div class="nombrecito"> Nombre del Centro de Acopio </div>
         <input type="text" placeholder="Nombre del Centro de Acopio" />
         
         <div class="col-half">
+            <div class="nombrecito"> Categoria </div>
             <select name='tipoCentro'>
                 <option selected value="">Seleccione una Categoria</option>
             </select>
         </div>
 
-        <div class="col-half"><input class="e" type="tel"  placeholder="Telefono" /></div>
+        <div class="col-half">
+            <div class="nombrecito"> Telefono de Contacto </div>
+            <input class="e" type="tel"  placeholder="Telefono" />
+        </div>
         
+        <div class="nombrecito"> Dirección </div>
         <input type="text" placeholder="Dirección" />
 
+        <div class="col-half">
+            <div class="nombrecito"> Latitud </div>
+            <input class="e" style="width: 100%;" type="text"  placeholder="Latitud" />
+        </div>
+        <div class="col-half">
+            <div class="nombrecito"> Longitud </div>
+            <input class="e" type="text"  placeholder="Longitud" />
+        </div>
+
+        <div class="nombrecito"> Descripción del Centro de Acopio </div>
         <textarea placeholder="Descripción"></textarea>
 
-        <div class="col-half"><input class="e" style="width: 100%;" type="text"  placeholder="Latitud" /></div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" /></div>
-
         <div class="col-half">
+            <div class="nombrecito"> Estado </div>
             <select name='estado'>
                 <option selected value="">Seleccione un Estado</option>
             </select>
         </div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Horario" /></div>
+        <div class="col-half">
+            <div class="nombrecito"> Horario </div>
+            <input class="e" type="text"  placeholder="Horario" />
+        </div>
         
 
         <div class="p">
             <button type="button" class="boton"> Editar Centro de Acopio </button>
+            <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 
     </div>

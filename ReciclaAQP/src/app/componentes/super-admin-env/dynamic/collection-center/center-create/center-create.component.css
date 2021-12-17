@@ -18,7 +18,7 @@
 }
 
 input{
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-bottom: 1%;
     margin-left: 5%;
     height: 45px;
@@ -37,6 +37,12 @@ input{
     margin-top: 0%;
 }
 
+.validador{
+    margin-left: 5%;
+    color: rgb(204, 0, 0);
+    font-size: 0.7rem;
+}
+
 a{
     margin-left: 1%;
 }
@@ -47,9 +53,8 @@ a{
 ::placeholder{
     font-family: Dosis;
     font-style: normal;
-    font-weight: bold;
     font-size: 15px;
-    color: #055242;
+    color: #9e9e9e;
 }
 
 .col-half{
@@ -64,7 +69,7 @@ h4{
     font-size: 15px;
     margin-left: 5%;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 0.5%;
     font-family: Dosis;
     font-style: bold;
 }
@@ -88,7 +93,7 @@ textarea{
 }
 
 .boton{
-    background: #055242;
+    background: #ffffff;
     border-radius: 5px;
     width: 250px;
     height: 35px;
@@ -96,9 +101,39 @@ textarea{
     font-style: normal;
     font-size: 16px;
     text-align: center;
-    color: #FFFFFF;
-    margin-left: 35%;
-    margin-top: 2%;
+    color: #000000;
+    margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #055242;
+}
+
+.boton:hover{
+    background: #055242;
+    color: #ffffff;
+}
+
+.boton2{
+    background: #ffffff;
+    border-radius: 5px;
+    width: 250px;
+    height: 35px;
+    font-family: Dosis;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: #EABD4B;
+}
+
+.boton2:hover{
+    background: #EABD4B;
+    color: #ffffff;
 }
 
 select option,

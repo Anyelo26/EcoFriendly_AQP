@@ -36,4 +36,8 @@ export class CollectionCenterDeleteComponent implements OnInit {
       }
     )
   }
+
+  public Cancelar(){
+    this.dialogRef.close();
+  }
 }

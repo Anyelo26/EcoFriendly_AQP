@@ -7,33 +7,53 @@
     </div>
     <div class="contenido">
 
+        <h4> Datos Generales <span>  </span></h4>
         <input type="text" placeholder="Nombre del Centro de Acopio" formControlName="nombre" required/>
-        
+        <div class="validador" *ngIf="formCenter.get('nombre')?.invalid && formCenter.get('nombre')?.touched">Rellenar el campo</div>
+
         <div class="col-half">
             <select name='tipoCentro' formControlName="categoria" required>
                 <option selected value="">Seleccione una Categoria</option>
             </select>
+            <div class="validador" *ngIf="formCenter.get('categoria')?.invalid && formCenter.get('categoria')?.touched">Rellenar el campo</div>
         </div>
 
-        <div class="col-half"><input class="e" type="tel" formControlName="telefono" placeholder="Telefono" required/></div>
+        <div class="col-half">
+            <input class="e" type="tel" formControlName="telefono" placeholder="Telefono" required/>
+            <div class="validador" *ngIf="formCenter.get('telefono')?.invalid && formCenter.get('telefono')?.touched">Rellenar el campo</div>
+        </div>
+        
         
         <input type="text" placeholder="Dirección" formControlName="direccion" required/>
+        <div class="validador" *ngIf="formCenter.get('direccion')?.invalid && formCenter.get('direccion')?.touched">Rellenar el campo</div>
+
+        <div class="col-half">
+            <input class="e" style="width: 100%;" type="text"  placeholder="Latitud" formControlName="latitud" required/>
+            <div class="validador" *ngIf="formCenter.get('latitud')?.invalid && formCenter.get('latitud')?.touched">Rellenar el campo</div>
+        </div>
+        <div class="col-half">
+            <input class="e" type="text"  placeholder="Longitud" formControlName="longitud" required/>
+            <div class="validador" *ngIf="formCenter.get('longitud')?.invalid && formCenter.get('longitud')?.touched">Rellenar el campo</div>
+        </div>
 
         <textarea placeholder="Descripción" formControlName="descripcion" required></textarea>
-
-        <div class="col-half"><input class="e" style="width: 100%;" type="text"  placeholder="Latitud" formControlName="latitud" required/></div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Longitud" formControlName="longitud" required/></div>
+        <div class="validador" *ngIf="formCenter.get('descripcion')?.invalid && formCenter.get('descripcion')?.touched">Rellenar el campo</div>
 
         <div class="col-half">
             <select name='estado' formControlName="estado" required>
                 <option selected value="">Seleccione un Estado</option>
             </select>
+            <div class="validador" *ngIf="formCenter.get('estado')?.invalid && formCenter.get('estado')?.touched"></div>
         </div>
-        <div class="col-half"><input class="e" type="text"  placeholder="Horario" formControlName="horario" required></div>
+        <div class="col-half">
+            <input class="e" type="text"  placeholder="Horario" formControlName="horario" required>
+            <div class="validador" *ngIf="formCenter.get('horario')?.invalid && formCenter.get('horario')?.touched">Rellenar el campo</div>
+        </div>
 
 
         <div class="p">
-            <button type="button" class="boton" (click)="Guardar()"> Guardar </button>
+            <button type="button" class="boton" [disabled]='formCenter.invalid' (click)='Guardar()'> Agregar Centro de Acopio </button>
+            <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 
     </div>
