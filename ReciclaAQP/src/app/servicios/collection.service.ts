@@ -32,7 +32,12 @@ export class CollectionService {
     let ruta =this.url+"retrieve/";
     return this.http.post<CollectionCenter>(ruta,id,{'headers': headers});
   }
-  editCollectionCenter(){
+  editCollectionCenter(center:any):Observable<CollectionCenter>{
+    let token=this.user.getMeToken();
+    const headers = new HttpHeaders().set('Authorization','Bearer '+token)
+    
+    let ruta =this.url+"update/";
+    return this.http.post<CollectionCenter>(ruta,center,{'headers': headers});
 
   }
   deleteCollectionCenter(data:any){

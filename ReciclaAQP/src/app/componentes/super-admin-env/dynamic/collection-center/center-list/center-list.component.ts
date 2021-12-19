@@ -63,16 +63,19 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
 
   }
 
-  gotoCollectionCenterEdit(){
+  gotoCollectionCenterEdit(identifica: String){
     const dialogRef = this.dialog.open(CollectionCenterEditComponent, {
-      width:'61%'
+      width:'61%',
+      data:{id:identifica}
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToListCollectionCenter();
     });
   }
 
   gotoCollectionCenterDelete(identifica:String){
     const dialogRef = this.dialog.open(CollectionCenterDeleteComponent, {
       width:'30%',
-      
       data:{id:identifica},
     });
     dialogRef.afterClosed().subscribe(Response=>{
@@ -85,6 +88,7 @@ export class CollectionCenterListComponent implements OnInit,AfterViewInit {
       width:'61%',
       data:{id:identifica},
     });
+        
   }
   goToListCollectionCenter(){
     this.collectionService.getListCollectionCenter().subscribe(

@@ -128,3 +128,10 @@ select:focus{
     background-color: #055242;
     color: #fff;
 }
+.nombrecito{
+    color: #055242;
+    font-weight: bold;
+    font-size: 0.7rem;
+    margin-left: 5%;
+    margin-bottom: 0%;
+}

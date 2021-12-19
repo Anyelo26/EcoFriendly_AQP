@@ -1,5 +1,5 @@
 
-<form class="formulario"[formGroup]="formUser">
+<form class="formulario" [formGroup]="formUser" (ngSubmit)="Editar(formUser.value)">
     <div class="titulo">
         <span> Editar Usuario </span>
     </div>
@@ -17,13 +17,20 @@
         <input type="email" placeholder="Correo" formControlName="email" value="{{datosUser.email}}"/>
         
         <div class="nombrecito"> Contraseña </div>
-        <input type="password" placeholder="Contraseña" formControlName="password" value="{{datosUser.password}}"/>
+        <input type="password" placeholder="Contraseña" formControlName="password" value="{{datosUser.password}}" readonly/>
 
-        <div class="nombrecito" > Estado del Usuario </div>
-        <input type="text" placeholder="Estado" formControlName="estado" value="{{datosUser.estado}}"/>
+        <div class="nombrecito"> Estado </div>
+       
+            <select name ="estadosUsuario" formControlName="estado" >
+                
+            </select>
 
+        <div class="nombrecito"> Rol </div>
+            <select name ="rolesUsuario" formControlName="rol" >
+                
+            </select>
         <div class="p">
-            <button type="button" class="boton" (click)="Editar()"> Editar </button>
+            <button type="submit" class="boton"> Editar </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 
