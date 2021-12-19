@@ -54,17 +54,28 @@ export class UserListComponent implements OnInit,AfterViewInit {
     const dialogRef = this.dialog.open(UserCreateComponent, {
       width:'61%'
     });
-  }
-
-  gotoUserEdit(){
-    const dialogRef = this.dialog.open(UserEditComponent, {
-      width:'61%'
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToUserList();
     });
   }
 
-  gotoUserDelete(){
+  gotoUserEdit(identifica: String){
+    const dialogRef = this.dialog.open(UserEditComponent, {
+      width:'61%',
+      data:{id:identifica}
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToUserList();
+    });
+  }
+
+  gotoUserDelete(identifica:String){
     const dialogRef = this.dialog.open(UserDeleteComponent, {
-      width:'30%'
+      width:'30%',
+      data:{id:identifica}
+    });
+    dialogRef.afterClosed().subscribe(Response=>{
+      this.goToUserList();
     });
   }
 

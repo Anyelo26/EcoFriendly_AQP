@@ -1,5 +1,5 @@
 
-<form class="formulario">
+<form class="formulario"[formGroup]="formUser">
     <div class="titulo">
         <span> Editar Usuario </span>
     </div>
@@ -8,22 +8,22 @@
     <div class="contenido">
 
         <div class="nombrecito"> Nombre </div>
-        <input type="text" placeholder="Nombre de Usuario" />
+        <input type="text" placeholder="Nombre de Usuario"  formControlName="nombre" value="{{datosUser.nombre}}"/>
 
         <div class="nombrecito"> Apellido </div>
-        <input type="text" placeholder="Apellido de Usuario" readonly/>
+        <input type="text" placeholder="Apellido de Usuario" formControlName="apellido" value="{{datosUser.apellido}}"/>
         
         <div class="nombrecito"> Email </div>
-        <input type="email" placeholder="Correo" />
+        <input type="email" placeholder="Correo" formControlName="email" value="{{datosUser.email}}"/>
         
         <div class="nombrecito"> Contraseña </div>
-        <input type="password" placeholder="Contraseña" />
+        <input type="password" placeholder="Contraseña" formControlName="password" value="{{datosUser.password}}"/>
 
-        <div class="nombrecito"> Estado del Usuario </div>
-        <input type="text" placeholder="Estado" />
+        <div class="nombrecito" > Estado del Usuario </div>
+        <input type="text" placeholder="Estado" formControlName="estado" value="{{datosUser.estado}}"/>
 
         <div class="p">
-            <button type="button" class="boton"> Guardar </button>
+            <button type="button" class="boton" (click)="Editar()"> Editar </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 

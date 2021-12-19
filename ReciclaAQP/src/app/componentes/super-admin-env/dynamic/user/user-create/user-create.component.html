@@ -1,22 +1,38 @@
 
-<form class="formulario">
+<form class="formulario" [formGroup]="formUser">
     <div class="titulo">
         <span> Nuevo Usuario </span>
     </div>
     <div class="linea">
     </div>
     <div class="contenido">
-
-        <input type="text" placeholder="Nombre del Usuario" />
-        <input type="text" placeholder="Apellido del Usuario" />
-        <input type="email" placeholder="Correo" />
-        <input type="password" placeholder="Contraseña" />
-        <input type="text" placeholder="Estado" />
-        
-        <input type="text" placeholder="Rol" />
-
+    <div class="col">
+        <input type="text" placeholder="Nombre del Usuario"  formControlName="nombre" required/>
+    </div>   
+    <div class="col">       
+        <input type="text" placeholder="Apellido del Usuario" formControlName="apellido" required/>
+    </div>
+    <div class="col">
+        <input type="email" placeholder="Correo" formControlName="email" required/>
+    </div>
+    <div class="col">
+        <input type="password" placeholder="Contraseña" formControlName="password" required/>
+    </div> 
+    <div class="col">
+        <select formControlName="estado">
+            <option value="" selected >Selecciona Opción</option>
+            <option *ngFor="let item of estados" [value]="item">{{item}}</option>
+        </select>
+    </div>
+    <div class="col">
+        <select formControlName="rol" >
+            <option value="" selected >Selecciona Opción</option>
+            <option *ngFor="let item of roles" [value]="item">{{item}}</option>
+        </select>
+    </div>
+    <br> 
         <div class="p">
-            <button type="button" class="boton"> Guardar </button>
+            <button type="button" class="boton" (click)='Guardar()'> Guardar </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 

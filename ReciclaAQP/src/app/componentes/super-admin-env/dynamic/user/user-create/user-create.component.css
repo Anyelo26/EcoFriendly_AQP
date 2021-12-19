@@ -114,3 +114,17 @@ textarea{
     background: #EABD4B;
     color: #ffffff;
 }
+select {
+    width: 90%;
+    height: 44px;
+    margin-top: 1%;
+    margin-left: 5%;
+    background-color:white;
+    color: black;
+    position: relative;
+    font-family: Dosis;
+}
+select:focus{
+    background-color: #055242;
+    color: #fff;
+}
