@@ -11,7 +11,7 @@ export class CollectionService {
 
   constructor(private http:HttpClient, private user:UserService) { }
 
-  url:string="http://127.0.0.1:8000/api/centros/"
+  url:string="https://tranquil-cliffs-10384.herokuapp.com/api/centros/"
 
   getListCollectionCenter(){
     return this.http.get<CollectionCenter>(this.url)

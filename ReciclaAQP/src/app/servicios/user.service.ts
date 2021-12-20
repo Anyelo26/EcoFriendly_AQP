@@ -8,9 +8,9 @@ import { User } from '../modelos/User';
   providedIn: 'root'
 })
 export class UserService {
-  url:string="http://127.0.0.1:8000/api/usuarios"
+  //url:string="http://127.0.0.1:8000/api/usuarios"
   //url del backend deployado
-  //url:string="https://tranquil-cliffs-10384.herokuapp.com/api/usuarios"
+  url:string="https://tranquil-cliffs-10384.herokuapp.com/api/usuarios"
   constructor(private http:HttpClient){
 
   }

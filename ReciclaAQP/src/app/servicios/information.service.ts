@@ -16,7 +16,7 @@ export class InformationService {
 
   }
 
-  url:string="http://127.0.0.1:8000/api/fichas/"
+  url:string="https://tranquil-cliffs-10384.herokuapp.com/api/fichas/"
 
   getListInformation(){
     let token= this.user.getMeToken();
