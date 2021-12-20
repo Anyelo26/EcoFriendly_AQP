@@ -51,7 +51,7 @@ export class InformationService {
     return this.http.post<Information>(direccion,id,{'headers': headers});
   }
 
-  editarInformation(information:Information):Observable<any>{
+  editarInformation(information:any):Observable<Information>{
 
     let token = this.user.getMeToken();
     const headers = new HttpHeaders().set('Authorization','Bearer '+token)

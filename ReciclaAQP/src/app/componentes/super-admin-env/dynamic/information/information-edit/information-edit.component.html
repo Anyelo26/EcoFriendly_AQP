@@ -12,8 +12,7 @@
         
         <div class="col-half">
             <div class="nombrecito"> Tipo o Categoria </div>
-            <select name='tipoInformacion' formControlName="tipo">
-                <option selected value="">Seleccione un tipo</option>
+            <select name='tipo' formControlName="tipo"> 
             </select>
         </div>
         
@@ -32,7 +31,7 @@
         <input type="text"  formControlName="detalle" placeholder="Detalle"/>
         
         <div mat-dialog-actions class="p">
-            <button type="button" class="boton" > Editar Ficha de Informativa </button>
+            <button type="submit" class="boton" > Editar Ficha de Informativa </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 
