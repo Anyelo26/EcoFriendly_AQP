@@ -21,16 +21,15 @@ interface Anio {
 })
 
 export class FootprintComponent implements OnInit {
-  constructor(private footprintService: FootprintService,
-  ) {
-  }
+  
+  constructor(private footprintService: FootprintService,) { }
+ 
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   ANIO_LIMITE = 2016;
   ANIO_MINIMO = 2009;
+ 
 
   never: any[] = [];
   lineChartData: ChartDataSets[] = [{data: [], label: ""}];
@@ -103,7 +102,6 @@ export class FootprintComponent implements OnInit {
   huella_regional_percapita: any = 0;
   zonas_de_pesca: any = 0;
   presicion: any = 0;
-
   selectedDep = this.departamentos[0].value;
 
   actualizarGraficas(data: any) {

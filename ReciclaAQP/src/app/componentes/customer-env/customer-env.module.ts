@@ -30,7 +30,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
 import { InfoDetailComponent } from './dynamic/information/info-detail/info-detail.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-import {ChartsModule} from "ng2-charts";
+import { ChartsModule } from "ng2-charts";
 
 @NgModule({
   declarations: [
