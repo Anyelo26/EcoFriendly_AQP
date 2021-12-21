@@ -102,6 +102,7 @@ export class FootprintComponent implements OnInit {
   huella_de_carbono: any = 0;
   huella_regional_percapita: any = 0;
   zonas_de_pesca: any = 0;
+  presicion: any = 0;
 
   selectedDep = this.departamentos[0].value;
 
@@ -109,7 +110,7 @@ export class FootprintComponent implements OnInit {
     this.lineChartLabels = [];
     this.lineChartData = [];
     let dataToLineChartData: ChartDataSets = {data: [], label: "Huella per Capita"};
-    for (let i = this.ANIO_MINIMO; i < +this.selectedAn; i++) {
+    for (let i = this.ANIO_MINIMO; i <= +this.selectedAn; i++) {
       this.lineChartLabels.push(`${i}`);
       let capita = data.contenido.filter((x: any) => x.anio === +i)[0].huella_regional_percapita;
       dataToLineChartData.data?.push(capita);
@@ -120,7 +121,7 @@ export class FootprintComponent implements OnInit {
 
   getDataFromServer() {
     if (!+this.selectedDep || !+this.selectedAn) {
-      alert("compelete formulario")
+      alert("Seleccione un departamento y un año")
       return;
     }
 
@@ -141,13 +142,16 @@ export class FootprintComponent implements OnInit {
             this.huella_regional_percapita = selected.huella_regional_percapita;
             this.zonas_de_pesca = selected["zonas_de_pesca "];
             this.actualizarGraficas(x);
+            this.presicion = 0;
           }
         }
       );
     } else {
       this.footprintService.getHuellaxAmbitoPrediccion(body).subscribe(
         x => {
+          
           let selected = x.resultado;
+          this.presicion = selected.presicion * 100;
           this.area_de_bosques = 0;
           this.area_de_cultivos = 0;
           this.area_de_pastoreo = 0;

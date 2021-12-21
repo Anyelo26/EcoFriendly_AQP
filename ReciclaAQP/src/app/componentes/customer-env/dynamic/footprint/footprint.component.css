@@ -94,3 +94,12 @@ input {
 .calcular {
   margin: 0 auto;
 }
+.grafico {
+  width: 66%;
+  display: flex; 
+  position: relative;
+
+}
+.content-grafico{
+  justify-content: center;
+}

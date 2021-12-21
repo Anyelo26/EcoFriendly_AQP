@@ -1,5 +1,5 @@
 <div class="contenedor-general mt-5">
-  <div class="example-button-row">
+  <div class="example-button-row mr-4">
     <div class="buscador">
       <h3> Seleccione su departamento: </h3>
 
@@ -60,7 +60,7 @@
     <div>
       <button mat-raised-button class="bio">
         <mat-icon>check_circle_outline</mat-icon>
-        Biodiversidad
+        Huella de Carbono
       </button>
       <input [value]="huella_de_carbono" type="text" disabled placeholder="0.25412" class="ml-3">
     </div>
@@ -77,29 +77,21 @@
       <mat-icon>check_circle_outline</mat-icon>
       Huella Per Cápita
     </button>
-    <input [value]="huella_regional_percapita" type="text" disabled placeholder="0.25412" class="valor-per-capita ml-2 mt-2">
+    <input [value]="huella_regional_percapita" type="text" disabled placeholder="0.25412"
+      class="valor-per-capita ml-2 mt-2">
+    <p class="mb-0">* Precisión del Pronóstico (%): {{ presicion }}</p>
+    <p class="mt-0">** Dicha precisión se aplica desde el año 2016 en adelante</p>
 
-    <button class="calcular btn btn-outline-primary mt-3" (click)="getDataFromServer()">
+    <button class="calcular btn btn-outline-primary mt-3 mb-3" (click)="getDataFromServer()">
       Calcular
     </button>
-
   </div>
 
-  <div class="justify-content-center">
-    <div class="chart-wrapper">
-      <canvas baseChart
-              [datasets]="lineChartData"
-              [labels]="lineChartLabels"
-              [options]="lineChartOptions"
-              [colors]="lineChartColors"
-              [legend]="lineChartLegent"
-              [chartType]="lineChartType"
-      >
+  <div class="content-grafico mt-5">
+    <div class="grafico chart-wrapper mt-5">
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors" [legend]="lineChartLegent" [chartType]="lineChartType">
       </canvas>
-
     </div>
-
   </div>
-
-
 </div>
