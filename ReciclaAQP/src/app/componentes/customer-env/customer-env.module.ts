@@ -30,10 +30,11 @@ import {MatCardModule} from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
 import { InfoDetailComponent } from './dynamic/information/info-detail/info-detail.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
-  declarations: [ 
-    CustomerEnvComponent, 
+  declarations: [
+    CustomerEnvComponent,
     BodyComponent,
     HeaderComponent,
     FooterComponent,
@@ -41,7 +42,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     InformationComponent,
     FootprintComponent,
     InfoDetailComponent
-  
+
   ],
   imports: [
     CommonModule,
@@ -63,6 +64,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     AgmCoreModule,
     NgbCollapseModule,
+    ChartsModule,
   ]
 })
 export class CustomerEnvModule { }

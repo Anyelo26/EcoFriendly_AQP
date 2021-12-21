@@ -1,40 +1,105 @@
-<div class="contenedor-general">
+<div class="contenedor-general mt-5">
+  <div class="example-button-row">
     <div class="buscador">
-        <h3> Seleccione su departamento: </h3>
+      <h3> Seleccione su departamento: </h3>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Departamento</mat-label>
-            <mat-select [(value)]="selectedDep">
-                <mat-option></mat-option>
-                <mat-option [value]="option.value" *ngFor="let option of departamentos">{{ option.viewValue }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <p>. </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Departamento</mat-label>
+        <mat-select [(value)]="selectedDep">
+          <mat-option></mat-option>
+          <mat-option [value]="option.value" *ngFor="let option of departamentos">{{ option.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <mat-divider></mat-divider>
 
-    <div class="example-button-row">
-        <button mat-raised-button class="agua">
-            <mat-icon>check_circle_outline</mat-icon> Agua
-        </button>
-        <button mat-raised-button class="clima">
-            <mat-icon>check_circle_outline</mat-icon> Cambio Climático
-        </button>
-        <button mat-raised-button class="atmosfera">
-            <mat-icon>check_circle_outline</mat-icon> Atmósfera
-        </button>
-        <button mat-raised-button class="residuos">
-            <mat-icon>check_circle_outline</mat-icon> Residuos
-        </button>
-        <button mat-raised-button class="bio">
-            <mat-icon>check_circle_outline</mat-icon> Biodiversidad
-        </button>
-        <button mat-raised-button class="recursos">
-            <mat-icon>check_circle_outline</mat-icon> Recursos
-        </button>
+    <div class="buscador">
+      <h3 class="mr-5"> Seleccione un año: </h3>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Año</mat-label>
+        <mat-select [(value)]="selectedAn">
+          <mat-option></mat-option>
+          <mat-option [value]="option.value" *ngFor="let option of anios">{{ option.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <div class="mapa">
-        <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng"></agm-map>
+    <div>
+      <button mat-raised-button class="agua">
+        <mat-icon>check_circle_outline</mat-icon>
+        Área de Cultivos
+      </button>
+      <input [value]="area_de_cultivos" type="text" disabled placeholder="0.25412" class="ml-3">
     </div>
+
+    <div>
+      <button mat-raised-button class="clima">
+        <mat-icon>check_circle_outline</mat-icon>
+        Área de Pastoreo
+      </button>
+      <input [value]="area_de_pastoreo" type="text" disabled placeholder="0.25412" class="ml-3">
+    </div>
+
+    <div>
+      <button mat-raised-button class="atmosfera">
+        <mat-icon>check_circle_outline</mat-icon>
+        Área de Bosques
+      </button>
+      <input [value]="area_de_bosques" type="text" disabled placeholder="0.25412" class="ml-3">
+    </div>
+
+    <div>
+      <button mat-raised-button class="residuos">
+        <mat-icon>check_circle_outline</mat-icon>
+        Zona de Pesca
+      </button>
+      <input [value]="zonas_de_pesca" type="text" disabled placeholder="0.25412" class="ml-3">
+    </div>
+
+    <div>
+      <button mat-raised-button class="bio">
+        <mat-icon>check_circle_outline</mat-icon>
+        Biodiversidad
+      </button>
+      <input [value]="huella_de_carbono" type="text" disabled placeholder="0.25412" class="ml-3">
+    </div>
+
+    <div>
+      <button mat-raised-button class="recursos">
+        <mat-icon>check_circle_outline</mat-icon>
+        Área urbana
+      </button>
+      <input [value]="areas_urbanas" type="text" disabled placeholder="0.25412" class="ml-3">
+    </div>
+
+    <button mat-raised-button class="per-capita">
+      <mat-icon>check_circle_outline</mat-icon>
+      Huella Per Cápita
+    </button>
+    <input [value]="huella_regional_percapita" type="text" disabled placeholder="0.25412" class="valor-per-capita ml-2 mt-2">
+
+    <button class="calcular btn btn-outline-primary mt-3" (click)="getDataFromServer()">
+      Calcular
+    </button>
+
+  </div>
+
+  <div class="justify-content-center">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegent"
+              [chartType]="lineChartType"
+      >
+      </canvas>
+
+    </div>
+
+  </div>
+
+
 </div>

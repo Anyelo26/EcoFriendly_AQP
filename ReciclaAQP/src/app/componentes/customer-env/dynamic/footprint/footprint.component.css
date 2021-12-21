@@ -1,16 +1,16 @@
 .contenedor-general{
-    position: relative;
-    margin-top: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 h3 {
-    color:rgb(42, 175, 25);
-    font-weight: bold ;
+  color:rgb(42, 175, 25);
+  font-weight: bold ;
 }
 mat-form-field {
-    float:left;
-    width: 100%;
+  float:left;
+  width: 100%;
 }
 .mapa{
   float: right;
@@ -19,53 +19,78 @@ mat-form-field {
   margin-top: 5px;
   width: 85%;
   flex-direction: column;
-    
+
 }
 .opciones{
-  position: relative;  
+  position: relative;
   margin-top: 30px;
-    width: 20%;
+  width: 20%;
 }
 .example-button-row {
-    margin: 8px 8px 8px 0;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  button {
-      margin: 5px;
-  }
-  p{
-      margin-top: 3px;
-      font-size: 10px;
-  }
-  .agua {
-    background-color: #00C6A0;
-    color: white;
-  }
-  .clima {
-    background-color: #00B4B6;
-    color: white;
-  }
-  .atmosfera {
-    background-color: #009FC2;
-    color: white;
-  }
-  .residuos {
-    background-color: #0088C0;
-    color: white;
-  }
-  .bio {
-    background-color: #3970AF;
-    color: white;
-  }
-  .recursos {
-    background-color: #5E5792;
-    color: white;
-  }
-  agm-map {
-    position: relative;
-    width: 100%;
-    height: 450px;
- }
+  margin: 8px 8px 8px 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button {
+  margin: 5px;
+  width: 200px;
+
+}
+p{
+  margin-top: 3px;
+  font-size: 10px;
+}
+.agua {
+  background-color: #00C6A0;
+  color: white;
+  display: inline-block;
+}
+.clima {
+  background-color: #00B4B6;
+  color: white;
+}
+.atmosfera {
+  background-color: #009FC2;
+  color: white;
+}
+.residuos {
+  background-color: #0088C0;
+  color: white;
+}
+.bio {
+  background-color: #3970AF;
+  color: white;
+}
+.recursos {
+  background-color: #5E5792;
+  color: white;
+}
+.linea {
+  display: inline-block;
+}
+input {
+  border-radius: 10px;
+  background-color: white;
+  width: 180px;
+}
+.per-capita {
+  background-color: #F8B826;
+  color: white;
+  width: 400px;
+}
+.valor-per-capita {
+  background-color: white;
+  width: 395px;
+}
+.buscador {
+  margin: 8px 8px 8px 0;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.calcular {
+  margin: 0 auto;
+}
