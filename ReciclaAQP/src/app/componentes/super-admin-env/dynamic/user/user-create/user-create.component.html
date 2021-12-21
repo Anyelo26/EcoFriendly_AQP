@@ -9,18 +9,22 @@
     <div class="col">
         <div class="nombrecito"> Nombre </div>
         <input type="text" placeholder="Nombre del Usuario"  formControlName="nombre" required/>
+        <div class="validador" *ngIf="formUser.get('nombre')?.invalid && formUser.get('nombre')?.touched">Rellenar el campo</div>
     </div>   
     <div class="col">   
         <div class="nombrecito"> Apellido </div>    
         <input type="text" placeholder="Apellido del Usuario" formControlName="apellido" required/>
+        <div class="validador" *ngIf="formUser.get('apellido')?.invalid && formUser.get('apellido')?.touched">Rellenar el campo</div>
     </div>
     <div class="col">
         <div class="nombrecito"> Correo </div>
         <input type="email" placeholder="Correo" formControlName="email" required/>
+        <div class="validador" *ngIf="formUser.get('email')?.invalid && formUser.get('email')?.touched">Rellenar el campo</div>
     </div>
     <div class="col">
         <div class="nombrecito"> Contraseña </div>
         <input type="password" placeholder="Contraseña" formControlName="password" required/>
+        <div class="validador" *ngIf="formUser.get('password')?.invalid && formUser.get('password')?.touched">Rellenar el campo</div>
     </div> 
     <div class="col">
         <div class="nombrecito"> Estado </div>
@@ -28,17 +32,20 @@
             <option value="" selected >Selecciona Opción</option>
             <option *ngFor="let item of estados" [value]="item">{{item}}</option>
         </select>
+        <div class="validador" *ngIf="formUser.get('estado')?.invalid && formUser.get('estado')?.touched"></div>
     </div>
+    <br>
     <div class="col">
         <div class="nombrecito"> Rol </div>
         <select formControlName="rol" >
             <option value="" selected >Selecciona Opción</option>
             <option *ngFor="let item of roles" [value]="item">{{item}}</option>
         </select>
+        <div class="validador" *ngIf="formUser.get('rol')?.invalid && formUser.get('rol')?.touched"></div>
     </div>
     <br> 
         <div class="p">
-            <button type="button" class="boton" (click)='Guardar()'> Guardar </button>
+            <button type="button" class="boton" [disabled]='formUser.invalid' (click)='Guardar()'> Agregar Usuario </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>
 

@@ -18,7 +18,7 @@
             <select name='tipoCentro' formControlName="categoria" required>
                 <option selected value="">Seleccione una Categoria</option>
             </select>
-            <div class="validador" *ngIf="formCenter.get('categoria')?.invalid && formCenter.get('categoria')?.touched">Rellenar el campo</div>
+            <div class="validador" *ngIf="formCenter.get('categoria')?.invalid && formCenter.get('categoria')?.touched"></div>
         </div>
 
         <div class="col-half">
@@ -35,7 +35,7 @@
         <div class="col-half">
             <div class="nombrecito"> Latitud </div>
             <input class="e" style="width: 100%;" type="text"  placeholder="Latitud" formControlName="latitud" required/>
-            <div class="validador" *ngIf="formCenter.get('latitud')?.invalid && formCenter.get('latitud')?.touched">Rellenar el campo</div>
+            <div class="validador" *ngIf="formCenter.get('latitud')?.invalid && formCenter.get('latitud')?.touched"></div>
         </div>
         
         <div class="col-half">
@@ -60,7 +60,7 @@
         <div class="col-half">
             <div class="nombrecito"> Horario </div>
             <input class="e" type="text"  placeholder="Horario" formControlName="horario" required>
-            <div class="validador" *ngIf="formCenter.get('horario')?.invalid && formCenter.get('horario')?.touched">Rellenar el campo</div>
+            <div class="validador" *ngIf="formCenter.get('horario')?.invalid && formCenter.get('horario')?.touched"></div>
         </div>
 
 
