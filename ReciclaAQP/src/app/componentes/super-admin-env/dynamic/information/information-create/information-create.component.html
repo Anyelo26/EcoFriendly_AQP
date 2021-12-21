@@ -26,18 +26,18 @@
             <div class="validador" *ngIf="formInformation.get('fecha')?.invalid && formInformation.get('fecha')?.touched">Rellenar el campo</div>
         </div>
         
-        <div class="nombrecito"> Descripción </div>
-        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        <div class="nombrecito"> Descripción (Maximo 300 caracteres) </div>
+        <textarea  formControlName="descripcion" placeholder="Descripción" maxlength="300"></textarea>
         <div class="validador" *ngIf="formInformation.get('descripcion')?.invalid && formInformation.get('descripcion')?.touched">Rellenar el campo</div>
         
         <div class="nombrecito"> URL </div>
-        <input type="text"  formControlName="url_imagen" placeholder="Url"/>
+        <input type="text"  formControlName="url_imagen" placeholder="Url" />
         <div class="validador" *ngIf="formInformation.get('url_imagen')?.invalid && formInformation.get('url_imagen')?.touched">Rellenar el campo</div>
 
         <!--<h4> Detalle <span> (Colocar los items necesarios con saltos de linea) </span></h4>-->
         
-        <div class="nombrecito"> Detalle </div>
-        <textarea  class="especial" formControlName="detalle" placeholder="Detalle"></textarea>
+        <div class="nombrecito"> Detalle (Maximo 500 caracteres)</div>
+        <textarea  class="especial" formControlName="detalle" placeholder="Detalle" maxlength="500"></textarea>
         <div class="validador" *ngIf="formInformation.get('detalle')?.invalid && formInformation.get('detalle')?.touched">Rellenar el campo</div>
 
         <div mat-dialog-actions class="p">

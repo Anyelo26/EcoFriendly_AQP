@@ -21,14 +21,14 @@
             <input class="e" type="date"  formControlName="fecha" placeholder="Fecha" />
         </div>
         
-        <div class="nombrecito"> Descripción </div>
-        <textarea  formControlName="descripcion" placeholder="Descripción"></textarea>
+        <div class="nombrecito">  Descripción (Maximo 300 caracteres)  </div>
+        <textarea  formControlName="descripcion" placeholder="Descripción" maxlength="300"></textarea>
         
         <div class="nombrecito"> URL de la Imagen </div>
         <input type="text"  formControlName="url_imagen" placeholder="Url"/>
 
-        <div class="nombrecito"> Detalle </div>
-        <textarea class="especial" formControlName="detalle" placeholder="Detalle"></textarea>
+        <div class="nombrecito"> Detalle (Maximo 500 caracteres) </div>
+        <textarea class="especial" formControlName="detalle" placeholder="Detalle" maxlength="500"></textarea>
         <!--<input type="text"  formControlName="detalle" placeholder="Detalle"/>-->
         
         <div mat-dialog-actions class="p">

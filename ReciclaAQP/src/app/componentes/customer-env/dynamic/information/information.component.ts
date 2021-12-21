@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Information } from 'src/app/modelos/Information';
-import { InfoDetailComponent } from './info-detail/info-detail.component';
 import { InformationService } from 'src/app/servicios/information.service';
 
 @Component({
@@ -36,8 +35,4 @@ export class InformationComponent implements OnInit {
     )
   }
 
-  goInformationDetail(){
-    //this.router.navigate(['/Detail', id_ficha]);
-    this.router.navigate(['/Detail']);
-  }
 }

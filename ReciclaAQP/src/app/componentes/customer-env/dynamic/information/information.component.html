@@ -1,21 +1,23 @@
 <h4> Consejos recomendaciones y datos curiosos, <span> para que recicles de forma correcta y sencilla </span></h4>
 
 <div class="conponent">
-    <mat-grid-list cols="3" rowWidth="33%" rowHeight="430px">
+    <mat-grid-list cols="1" rowWidth="90%" rowHeight="450px">
         <div *ngFor = "let registro of cards">
             <mat-grid-tile>
                 <mat-card class="card">
                     <mat-card-title-group>
                         <mat-card-title class="title">{{registro.titulo}}</mat-card-title>
+                        <mat-card-subtitle class="tipo">{{registro.tipo}}</mat-card-subtitle>
                         <mat-card-subtitle class="fecha">{{registro.fecha}}</mat-card-subtitle>
+                        <img mat-card-xl-image class="imagen" src={{registro.url_imagen}}>
                     </mat-card-title-group>
-                    <img class="imagen" mat-card-lg-image src={{registro.url_imagen}}>
+                    
                     <mat-card-content class="texto">
                         {{registro.descripcion}}
                     </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button (click)='goInformationDetail()'>Ver Más</button>
-                    </mat-card-actions>
+                    <mat-card-content class="texto">
+                        {{registro.detalle}}
+                    </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
         </div>
