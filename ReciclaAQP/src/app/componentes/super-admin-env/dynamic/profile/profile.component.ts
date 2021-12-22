@@ -17,18 +17,49 @@ export class ProfileComponent implements OnInit {
   constructor(
     public userService: UserService,
     public router: Router,
+    public toastr:ToastrService,
+    public dialogRef:MatDialogRef<ProfileComponent>
   ) { }
 
+  public formUser!:FormGroup;
+  
+    construirFormulario(){
+    this.formUser= new FormGroup({
+    id:new FormControl('',[Validators.required]),
+    apellido: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required]),
+    estado: new FormControl('',[Validators.required]),
+    nombre: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
+    rol: new FormControl('',[Validators.required]),
+    //no debe incluirse token, en el view esta mostrandose token , cuidado con eso, consultar a back
+
+  })
+}
+    
   ngOnInit() {
-    //console.log(localStorage.getItem('id'))
+    this.construirFormulario();
     let id=this.userService.getMeIdOfLocalStorage();
     this.userService.viewUser({"id":id}).subscribe(
-      (response)=>{
-        this.datosUser=response;
+      (response:User)=>{
+        this.formUser.setValue(response);
+        return this.datosUser=response;
       }
     )
-    
-    
+}
+
+public Editar(formulario: User){
+  this.userService.editUser(formulario).subscribe(
+    (response:User)=>{
+      this.toastr.success('Se editó exitosamente el perfil','Perfil editado');
+      return response;
+
+    }
+  )
+
+}
+public Cancelar(){
+  this.dialogRef.close();
 }
 
 }

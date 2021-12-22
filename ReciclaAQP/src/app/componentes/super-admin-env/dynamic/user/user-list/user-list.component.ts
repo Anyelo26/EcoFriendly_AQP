@@ -24,7 +24,7 @@ export class UserListComponent implements OnInit,AfterViewInit {
   @ViewChild(MatSort)sort!: MatSort
 
   constructor(
-    private userService:UserService,
+    public userService:UserService,
     private router: Router, 
     private route: ActivatedRoute, 
     public dialog: MatDialog,

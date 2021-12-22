@@ -9,7 +9,7 @@
         <!--<li class="nav-item active">
           <a class="nav-link menu" (click)='gotoInicio()'> Inicio </a>
         </li>-->
-        <li class="nav-item active">
+        <li class="nav-item active" *ngIf="userService.getMeRolLocalStorage()==='superadmin'">
           <a class="nav-link menu" (click)='gotoUser()'>Usuarios</a>
         </li>
         <li class="nav-item active">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { reduceEachLeadingCommentRange } from 'typescript';
 
+import { UserService } from 'src/app/servicios/user.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +11,7 @@ import { reduceEachLeadingCommentRange } from 'typescript';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public userService:UserService) { }
 
   public isCollapsed = true;
   

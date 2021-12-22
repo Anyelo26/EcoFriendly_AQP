@@ -21,7 +21,12 @@ export class UserService {
   }
   getMeIdOfLocalStorage(){
     var id=localStorage.getItem('id');
+    
     return id;
+  }
+  getMeRolLocalStorage(){
+    var rol= localStorage.getItem('rol');
+    return rol
   }
   //lista de usuarios sin token
   getlistUser(){
