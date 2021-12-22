@@ -10,6 +10,7 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const environment = {
   production: true,
+  mapBoxApiKey:'pk.eyJ1IjoiYW55ZWxvMjYiLCJhIjoiY2t4aGJkMWlyMDY5MTJvbzh2eHB1Yjk4NyJ9.bfwtMAqw_63hUjBaXqyLkw',
   firebaseConfig : {
     apiKey: "AIzaSyC9Atl5H1kYf-ynKn7g2YfNf-d9m2jZwiM",
     authDomain: "ecofriendly-82b95.firebaseapp.com",
