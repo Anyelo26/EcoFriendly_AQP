@@ -52,7 +52,8 @@ export class CollectionCenterComponent implements OnInit {
       .setPopup(
         new mapboxgl.Popup({offset: 55})
         .setHTML(
-          '<h3>'+markers[entry].nombre+'</h3>'+'<p>'+markers[entry].descripcion+'</p>'
+          '<h3><strong>'+markers[entry].nombre+'</strong></h3>'+'<p>'+markers[entry].descripcion+'</p>'+
+          '<p2><i> Dirección: '+markers[entry].direccion+'<i></p2>'
         )
       )
       .addTo(this.mapa);

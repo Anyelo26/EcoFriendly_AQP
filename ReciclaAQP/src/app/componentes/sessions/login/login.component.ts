@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
         //console.log(response);
         localStorage.setItem('token',response.token);
         localStorage.setItem('id',response.id);
-        localStorage.setItem('rol',response.rol)
+        localStorage.setItem('rol',response.rol);
+        console.log(localStorage)
        // localStorage.setItem('docente',"SI");
        if(response.token!=null){
         this.router.navigate(['SuperAdmin/CollectionCenterList'])

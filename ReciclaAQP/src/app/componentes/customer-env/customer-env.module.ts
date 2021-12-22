@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CustomerEnvRoutingModule } from './customer-env-routing.module';
@@ -30,6 +30,8 @@ import {MatCardModule} from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from "ng2-charts";
+
+import { UserService } from 'src/app/servicios/user.service';
 
 
 @NgModule({
@@ -64,6 +66,7 @@ import { ChartsModule } from "ng2-charts";
     AgmCoreModule,
     NgbCollapseModule,
     ChartsModule,
-  ]
+  ],
+  providers: [UserService]
 })
 export class CustomerEnvModule { }

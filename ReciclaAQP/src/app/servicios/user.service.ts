@@ -19,6 +19,10 @@ export class UserService {
     var token= localStorage.getItem('token');  
     return token;
   }
+  getMeIdOfLocalStorage(){
+    var id=localStorage.getItem('id');
+    return id;
+  }
   //lista de usuarios sin token
   getlistUser(){
     return this.http.get<User[]>(this.url)
