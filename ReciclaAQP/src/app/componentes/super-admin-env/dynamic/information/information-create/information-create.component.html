@@ -8,12 +8,12 @@
     <div class="contenido">
 
         <!--<h4> Datos Generales <span>  </span></h4>-->
-        <div class="nombrecito"> Titulo </div>
+        <div class="nombrecito"> Titulo<span class="aste">(*)</span></div>
         <input type="text" formControlName="titulo" placeholder="Titulo" />
         <div class="validador" *ngIf="formInformation.get('titulo')?.invalid && formInformation.get('titulo')?.touched">Rellenar el campo</div>
 
         <div class="col-half">
-            <div class="nombrecito"> Tipo </div>
+            <div class="nombrecito"> Tipo<span class="aste">(*)</span></div>
             <select name='tipoInformacion' formControlName="tipo">
                 <option selected value="">Seleccione un tipo</option>
             </select>
@@ -21,22 +21,22 @@
         </div>
         
         <div class="col-half">
-            <div class="nombrecito"> Fecha de publicación </div>
+            <div class="nombrecito"> Fecha de publicación<span class="aste">(*)</span></div>
             <input class="e" type="date"  formControlName="fecha" placeholder="Fecha" />
             <div class="validador" *ngIf="formInformation.get('fecha')?.invalid && formInformation.get('fecha')?.touched">Rellenar el campo</div>
         </div>
         
-        <div class="nombrecito"> Descripción (Maximo 300 caracteres) </div>
+        <div class="nombrecito"> Descripción (Maximo 300 caracteres)<span class="aste">(*)</span></div>
         <textarea  formControlName="descripcion" placeholder="Descripción" maxlength="300"></textarea>
         <div class="validador" *ngIf="formInformation.get('descripcion')?.invalid && formInformation.get('descripcion')?.touched">Rellenar el campo</div>
         
-        <div class="nombrecito"> URL </div>
+        <div class="nombrecito"> URL <span class="aste">(*)</span></div>
         <input type="text"  formControlName="url_imagen" placeholder="Url" />
         <div class="validador" *ngIf="formInformation.get('url_imagen')?.invalid && formInformation.get('url_imagen')?.touched">Rellenar el campo</div>
 
         <!--<h4> Detalle <span> (Colocar los items necesarios con saltos de linea) </span></h4>-->
         
-        <div class="nombrecito"> Detalle (Maximo 500 caracteres)</div>
+        <div class="nombrecito"> Detalle (Maximo 500 caracteres)<span class="aste">(*)</span></div>
         <textarea  class="especial" formControlName="detalle" placeholder="Detalle" maxlength="500"></textarea>
         <div class="validador" *ngIf="formInformation.get('detalle')?.invalid && formInformation.get('detalle')?.touched">Rellenar el campo</div>
 

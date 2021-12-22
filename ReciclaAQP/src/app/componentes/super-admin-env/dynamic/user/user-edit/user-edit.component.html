@@ -7,29 +7,30 @@
     </div>
     <div class="contenido">
 
-        <div class="nombrecito"> Nombre </div>
+        <div class="nombrecito"> Nombre <span class="aste">(*)</span></div>
         <input type="text" placeholder="Nombre de Usuario"  formControlName="nombre" value="{{datosUser.nombre}}"/>
 
-        <div class="nombrecito"> Apellido </div>
+        <div class="nombrecito"> Apellido <span class="aste">(*)</span></div>
         <input type="text" placeholder="Apellido de Usuario" formControlName="apellido" value="{{datosUser.apellido}}"/>
         
-        <div class="nombrecito"> Email </div>
+        <div class="nombrecito"> Email <span class="aste">(*)</span></div>
         <input type="email" placeholder="Correo" formControlName="email" value="{{datosUser.email}}"/>
         
-        <div class="nombrecito"> Contraseña </div>
+        <div class="nombrecito"> Contraseña <span class="aste">(*)</span></div>
         <input type="password" placeholder="Contraseña" formControlName="password" value="{{datosUser.password}}" readonly/>
 
-        <div class="nombrecito"> Estado </div>
+        <div class="nombrecito"> Estado <span class="aste">(*)</span></div>
        
             <select name ="estadosUsuario" formControlName="estado" >
                 
             </select>
-
-        <div class="nombrecito"> Rol </div>
+            <br> <br> 
+        <div class="nombrecito"> Rol <span class="aste">(*)</span></div>
             <select name ="rolesUsuario" formControlName="rol" >
                 
             </select>
-        <div class="p">
+            <br> <br>
+            <div class="p">
             <button type="submit" class="boton"> Editar </button>
             <button type="button" class="boton2" (click)='Cancelar()'> Cancelar </button>
         </div>

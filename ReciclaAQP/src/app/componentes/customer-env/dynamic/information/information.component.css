@@ -20,7 +20,7 @@ h4 span{
     box-sizing: border-box;
     box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.05);
     border-radius: 0.5%; 
-    margin: 3%;
+    margin-left: 6%;
     height: auto;
     position:inherit;
 }
@@ -61,9 +61,11 @@ h4 span{
     letter-spacing: 0.03em;
     margin: 0% auto;
     color: #000000;
-    margin-right: 25%;
+    margin-right: 2%;
+    text-justify: auto;
 }
 
 .imagen{
-    margin-right: 1%;
+    height: 300px;
+    width: 500px;
 }
